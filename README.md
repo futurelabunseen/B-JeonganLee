@@ -9,6 +9,4 @@ UNSEEN 2기 학습 일지 및 프로젝트 레포입니다.
 
 ## 문서화
 
-- [프로젝트 계획서](./Document/ProjectPlan/README.md)
-- [학습 일지](./Document/StudyNote/README.md)
-- [프로젝트 개발 일지](./Document/ProjectPlan/README.md)
+- [문서화된 내용들](./Document/README.md)
