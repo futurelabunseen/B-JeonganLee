@@ -1,0 +1,15 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-HelloUnreal.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\HelloUnrealEditor\Development\Engine\SharedPCH.Engine.Cpp20.h.obj"
+"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\HelloUnreal\HelloUnreal.init.gen.cpp.obj"
+"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\HelloUnreal\MyGameInstance.gen.cpp.obj"
+"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\HelloUnreal\HelloUnreal.cpp.obj"
+"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\HelloUnreal\MyGameInstance.cpp.obj"
+"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\HelloUnreal\Default.rc2.res"
+/OUT:"D:\B-JeonganLee\Unreal5_Lecture_Project\Part1\HelloUnreal\Intermediate\Build\Win64\x64\UnrealEditor\Development\HelloUnreal\UnrealEditor-HelloUnreal.lib"
