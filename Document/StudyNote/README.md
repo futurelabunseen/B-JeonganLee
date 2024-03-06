@@ -4,10 +4,7 @@
 
 ## 이득우의 언리얼 프로그래밍 강의
 
-- [Part1: 언리얼 C++의 이해](./UnrealLecture/Part1/README.md)
-- Part2: 언리얼 게임 프레임웍의 이해
-- Part3: 네트웍 멀티플레이 프레임웍의 이해
-- Part4: 게임플레이 어빌리티 시스템
+- [이득우의 언리얼 프로그래밍 강의](./UnrealLecture/README.md)
 
 ## 프로젝트 사전 설정 규칙
 
