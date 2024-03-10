@@ -2,6 +2,8 @@
 
 [제공된 가이드 규칙](https://github.com/Allar/ue5-style-guide/tree/v2?tab=readme-ov-file)
 
+추가로 언리얼 [C++ 스타일 가이드](/Document/StudyNote/UnrealLecture/Part1/Lecture2.md)는 Part1의 2강에서 다룸
+
 ## 용어 정리
 
 ### Levels/Maps

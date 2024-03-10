@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abplayercontroller.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\x64\\arenabattleeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\arenabattle\\definitions.arenabattle.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\source\\arenabattle\\player\\abplayercontroller.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abplayercontroller.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
