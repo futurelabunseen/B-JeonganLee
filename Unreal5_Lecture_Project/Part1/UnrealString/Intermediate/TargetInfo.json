@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealString",
+			"Path": "..\\Source\\UnrealString.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealStringEditor",
+			"Path": "..\\Source\\UnrealStringEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
