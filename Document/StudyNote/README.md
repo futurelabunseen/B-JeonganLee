@@ -11,6 +11,7 @@
 *프로젝트에 들어가야할 기술 요건들입니다.*
 
 - [언리얼 에셋 이름 규칙](./UnrealConvention/Unreal5StyleGuide.md)
+- [게임플레이 어빌리티 시스템](./UnrealFunction/GameplayAbilitySystem.md)
 - [Enhanced Input](./UnrealFunction/EnhancedInput.md)
 - [UMG UI 디자이너](./UnrealFunction/UMG.md)
 - [캐릭터 무브먼트 컴포넌트](./UnrealFunction/CharacterMovementComponent.md)
