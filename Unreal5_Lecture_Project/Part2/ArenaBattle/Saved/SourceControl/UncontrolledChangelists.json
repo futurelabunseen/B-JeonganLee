@@ -1,0 +1,13 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Maps/Step2.umap",
+				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset"
+			]
+		}
+	]
+}
