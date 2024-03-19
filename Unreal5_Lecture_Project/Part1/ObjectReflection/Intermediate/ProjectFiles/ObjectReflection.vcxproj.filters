@@ -45,5 +45,23 @@
     <ClInclude Include="..\..\Source\ObjectReflection\ObjectReflection.h">
       <Filter>Source\ObjectReflection</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ObjectReflection\Person.cpp">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ObjectReflection\Person.h">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ObjectReflection\Student.cpp">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ObjectReflection\Student.h">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ObjectReflection\Teacher.cpp">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ObjectReflection\Teacher.h">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
