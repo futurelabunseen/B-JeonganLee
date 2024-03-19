@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "ObjectReflection",
+			"Path": "..\\Source\\ObjectReflection.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "ObjectReflectionEditor",
+			"Path": "..\\Source\\ObjectReflectionEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
