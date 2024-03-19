@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealObject\\Source\\UnrealObject\\UnrealObject.Build.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealObject\\Source\\UnrealObject.Target.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealObject\\Source\\UnrealObjectEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}

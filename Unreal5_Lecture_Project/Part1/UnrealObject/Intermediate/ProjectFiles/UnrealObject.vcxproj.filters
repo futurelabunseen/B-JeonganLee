@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnrealObject.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealObject.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnrealObjectEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnrealObject">
+      <UniqueIdentifier>{BDF5521E-56A7-3656-A998-57D0ADEF95FE}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealObject\MyObject.cpp">
+      <Filter>Source\UnrealObject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealObject\MyObject.h">
+      <Filter>Source\UnrealObject</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\UnrealObject\UnrealObject.Build.cs">
+      <Filter>Source\UnrealObject</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnrealObject\UnrealObject.cpp">
+      <Filter>Source\UnrealObject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealObject\UnrealObject.h">
+      <Filter>Source\UnrealObject</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
