@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\ObjectReflection.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\ObjectReflection.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\ObjectReflectionEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\ObjectReflection">
+      <UniqueIdentifier>{ED5A2DE9-81D8-37CE-8B51-8D431053BB88}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ObjectReflection\MyGameInstance.cpp">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ObjectReflection\MyGameInstance.h">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\ObjectReflection\ObjectReflection.Build.cs">
+      <Filter>Source\ObjectReflection</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\ObjectReflection\ObjectReflection.cpp">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ObjectReflection\ObjectReflection.h">
+      <Filter>Source\ObjectReflection</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
