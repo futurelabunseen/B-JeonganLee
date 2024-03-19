@@ -7,7 +7,20 @@
         "Includes": [
             "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\objectreflection\\definitions.objectreflection.h",
             "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\source\\objectreflection\\mygameinstance.h",
-            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\intermediate\\build\\win64\\unrealeditor\\inc\\objectreflection\\uht\\mygameinstance.generated.h"
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\intermediate\\build\\win64\\unrealeditor\\inc\\objectreflection\\uht\\mygameinstance.generated.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\source\\objectreflection\\student.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\source\\objectreflection\\person.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\intermediate\\build\\win64\\unrealeditor\\inc\\objectreflection\\uht\\person.generated.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\intermediate\\build\\win64\\unrealeditor\\inc\\objectreflection\\uht\\student.generated.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\source\\objectreflection\\teacher.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\objectreflection\\intermediate\\build\\win64\\unrealeditor\\inc\\objectreflection\\uht\\teacher.generated.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
