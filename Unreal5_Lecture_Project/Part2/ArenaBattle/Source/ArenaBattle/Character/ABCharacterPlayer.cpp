@@ -6,6 +6,7 @@
 #include "InputMappingContext.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "ABCharacterControlData.h"
 
 AABCharacterPlayer::AABCharacterPlayer()
 {
@@ -20,48 +21,45 @@ AABCharacterPlayer::AABCharacterPlayer()
 	FollowCamera->bUsePawnControlRotation = false;
 
 	// Input
-	static ConstructorHelpers::FObjectFinder<UInputMappingContext> InputMappingContextRef(TEXT("/Script/EnhancedInput.InputMappingContext'/Game/ArenaBattle/Input/IMC_Default.IMC_Default'"));
-	if (nullptr != InputMappingContextRef.Object)
-	{
-		DefaultMappingContext = InputMappingContextRef.Object;
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Failed to find IMC_Default"));
-	
-	}
-
-	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionMoveRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_Move.IA_Move'"));
-	if (nullptr != InputActionMoveRef.Object)
-	{
-		MoveAction = InputActionMoveRef.Object;
-	}
-
 	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionJumpRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_Jump.IA_Jump'"));
 	if (nullptr != InputActionJumpRef.Object)
 	{
 		JumpAction = InputActionJumpRef.Object;
 	}
 
-	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionLookRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_Look.IA_Look'"));
-	if (nullptr != InputActionLookRef.Object)
+	static ConstructorHelpers::FObjectFinder<UInputAction> InputChangeActionControlRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_ChangeControl.IA_ChangeControl'"));
+	if (nullptr != InputChangeActionControlRef.Object)
 	{
-		LookAction = InputActionLookRef.Object;
+		ChangeControlAction = InputChangeActionControlRef.Object;
 	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionShoulderMoveRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_ShoulderMove.IA_ShoulderMove'"));
+	if (nullptr != InputActionShoulderMoveRef.Object)
+	{
+		ShoulderMoveAction = InputActionShoulderMoveRef.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionShoulderLookRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_ShoulderLook.IA_ShoulderLook'"));
+	if (nullptr != InputActionShoulderLookRef.Object)
+	{
+		ShoulderLookAction = InputActionShoulderLookRef.Object;
+	}
+
+	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionQuaterMoveRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_QuaterMove.IA_QuaterMove'"));
+	if (nullptr != InputActionQuaterMoveRef.Object)
+	{
+		QuaterMoveAction = InputActionQuaterMoveRef.Object;
+	}
+
+	// 현재 상태 기본값으로 초기화 (Quater로 시작)
+	CurrentCharacterControlType = ECharacterControlType::Quater;
 }
 
 void AABCharacterPlayer::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// 컨트롤러가 플레이어 컨트롤러 대상으로 설계된 전용 캐릭터 클래스이기에 castChecked를 사용하여 캐스팅합니다.
-	APlayerController* PlayerController = CastChecked<APlayerController>(GetController());
-	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
-	{
-		Subsystem->AddMappingContext(DefaultMappingContext, 0);
-		//Subsystem->RemoveMappingContext(DefaultMappingContext); // 런타임에 매핑 컨텍스트를 제거할 수도 있습니다.
-	}
-
+	SetCharacterControl(CurrentCharacterControlType);
 }
 
 void AABCharacterPlayer::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -72,14 +70,68 @@ void AABCharacterPlayer::SetupPlayerInputComponent(class UInputComponent* Player
 
 	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
 	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::Move);
-	EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::Look);
+	EnhancedInputComponent->BindAction(ShoulderMoveAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ShoulderMove);
+	EnhancedInputComponent->BindAction(ShoulderLookAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ShoulderLook);
+	EnhancedInputComponent->BindAction(QuaterMoveAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::QuaterMove);
+	EnhancedInputComponent->BindAction(ChangeControlAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ChangeCharacterControl);
 	// 각 키 입력에 대한 액션을 바인딩합니다.
 	// ex 점프 액션의 Triggered 이벤트에 Jump 함수를 바인딩합니다. Completed 이벤트에 StopJumping 함수를 바인딩합니다.
 	// (점프는 `ACharacter` 클래스에 정의된 함수를 매핑하지만, Move와 Look는 `AABCharacterPlayer` 클래스로 연결되기에 직접 구현
 }
 
-void AABCharacterPlayer::Move(const FInputActionValue& Value)
+void AABCharacterPlayer::ChangeCharacterControl()
+{
+	if (CurrentCharacterControlType == ECharacterControlType::Quater)
+	{
+		SetCharacterControl(ECharacterControlType::Shoulder);
+	}
+	else if (CurrentCharacterControlType == ECharacterControlType::Shoulder)
+	{
+		SetCharacterControl(ECharacterControlType::Quater);
+	}
+}
+
+void AABCharacterPlayer::SetCharacterControl(ECharacterControlType NewCharacterControlType)
+{
+	// 상위 클래스에 정의된 딕셔너리에서 key값을 넣어서 컨텍스트를 가져온다.
+	UABCharacterControlData* NewCharacterControl = CharacterControlManager[NewCharacterControlType];
+	check(NewCharacterControl); // nullptr이 아닌지 체크 (어서션)
+
+	SetCharacterControlData(NewCharacterControl); // 상위 클래스에 정의된 함수를 호출하여 캐릭터 컨트롤 데이터를 설정한다.
+	// super을 통해 base에 pawn과 character movement를 설정하고
+	// 현재 이 클래스에선 플레이어 입력과 스프링암 데이터를 설정한다.
+
+	APlayerController* PlayerController = CastChecked<APlayerController>(GetController()); // 플레이어 컨트롤러를 가져온다. 반드시 가져와야 하는 경우 CastChecked를 사용한다.
+	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
+	{
+		// EnhancedInput 시스템에서 실제로 Input Mapping 컨텍스트를 운영하는 Subsystem을 가져온다.
+		// 그리고 이전에 설정된 모든 매핑을 지우고 새로운 컨텍스트를 추가한다.
+		Subsystem->ClearAllMappings();
+		UInputMappingContext* NewMappingContext = NewCharacterControl->InputMappingContext;
+		if (NewMappingContext)
+		{
+			Subsystem->AddMappingContext(NewMappingContext, 0);
+			// 우선순위가 있는 것 같은데, 그렇다면 초기화에 이 작업을 컨택스트 만큼 수행하고 변경을 우선순위만 바꾸면 되지 않을까?
+		}
+	}
+
+	CurrentCharacterControlType = NewCharacterControlType;
+}
+
+void AABCharacterPlayer::SetCharacterControlData(const UABCharacterControlData* CharacterControlData)
+{
+	Super::SetCharacterControlData(CharacterControlData); // 전에 구현한 Base의 클래스 함수를 호출 (필수)
+	
+	CameraBoom->TargetArmLength = CharacterControlData->TargetArmLength;
+	CameraBoom->SetRelativeRotation(CharacterControlData->RelativeRotation);
+	CameraBoom->bUsePawnControlRotation = CharacterControlData->bUsePawnControlRotation;
+	CameraBoom->bInheritPitch = CharacterControlData->bInheritPitch;
+	CameraBoom->bInheritYaw = CharacterControlData->bInheritYaw;
+	CameraBoom->bInheritRoll = CharacterControlData->bInheritRoll;
+	CameraBoom->bDoCollisionTest = CharacterControlData->bDoCollisionTest;
+}
+
+void AABCharacterPlayer::ShoulderMove(const FInputActionValue& Value)
 {
 	FVector2D MovementVector = Value.Get<FVector2D>();
 
@@ -93,7 +145,7 @@ void AABCharacterPlayer::Move(const FInputActionValue& Value)
 	AddMovementInput(RightDirection, MovementVector.Y);
 }
 
-void AABCharacterPlayer::Look(const FInputActionValue& Value)
+void AABCharacterPlayer::ShoulderLook(const FInputActionValue& Value)
 {
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 
@@ -101,3 +153,24 @@ void AABCharacterPlayer::Look(const FInputActionValue& Value)
 	AddControllerPitchInput(LookAxisVector.Y);
 }
 
+void AABCharacterPlayer::QuaterMove(const FInputActionValue& Value)
+{
+	FVector2D MovementVector = Value.Get<FVector2D>();
+
+	float InputSizeSquared = MovementVector.SquaredLength();
+	float MovementVectorSize = 1.0f;
+	float MovementVectorSizeSquared = MovementVector.SquaredLength();
+	if (MovementVectorSizeSquared > 1.0f)
+	{
+		MovementVector.Normalize();
+		MovementVectorSizeSquared = 1.0f;
+	}
+	else
+	{
+		MovementVectorSize = FMath::Sqrt(MovementVectorSizeSquared);
+	}
+
+	FVector MoveDirection = FVector(MovementVector.X, MovementVector.Y, 0.0f);
+	GetController()->SetControlRotation(FRotationMatrix::MakeFromX(MoveDirection).Rotator());
+	AddMovementInput(MoveDirection, MovementVectorSize);
+}
