@@ -72,5 +72,14 @@
     <ClInclude Include="..\..\Source\ArenaBattle\Player\ABPlayerController.h">
       <Filter>Source\ArenaBattle\Player</Filter>
     </ClInclude>
+    <Filter Include="Source\ArenaBattle\Prop">
+      <UniqueIdentifier>{F74905D4-D0E8-327D-9248-6CCA08A82A7C}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaBattle\Prop\AB_Fountain.cpp">
+      <Filter>Source\ArenaBattle\Prop</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Prop\AB_Fountain.h">
+      <Filter>Source\ArenaBattle\Prop</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

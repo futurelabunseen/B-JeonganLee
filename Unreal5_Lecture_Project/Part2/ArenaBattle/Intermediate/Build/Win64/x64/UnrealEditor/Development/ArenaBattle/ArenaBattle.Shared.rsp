@@ -259,6 +259,8 @@
 /I "D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Intermediate\Build\Win64\UnrealEditor\Inc\ArenaBattle\UHT"
 /I "D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle"
 /I "D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"
