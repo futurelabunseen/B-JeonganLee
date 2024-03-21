@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealinterface\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealinterface\\uht\\mygameinstance.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealinterface\\intermediate\\build\\win64\\x64\\unrealinterfaceeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealinterface\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealinterface\\definitions.unrealinterface.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealinterface\\source\\unrealinterface\\mygameinstance.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealinterface\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealinterface\\uht\\mygameinstance.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
