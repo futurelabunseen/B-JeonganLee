@@ -257,6 +257,7 @@
 /I "..\Intermediate\Build\Win64\UnrealEditor\Inc\WidgetRegistration\UHT"
 /I "Developer\WidgetRegistration\Public"
 /I "D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Intermediate\Build\Win64\UnrealEditor\Inc\ArenaBattle\UHT"
+/I "D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle"
 /I "D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
