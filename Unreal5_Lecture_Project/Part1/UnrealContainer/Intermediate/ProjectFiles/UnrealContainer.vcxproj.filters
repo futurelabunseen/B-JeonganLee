@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnrealContainer.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealContainer.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnrealContainerEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnrealContainer">
+      <UniqueIdentifier>{82C21281-A506-32D1-8676-D0AF19C32029}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealContainer\MyGameInstance.cpp">
+      <Filter>Source\UnrealContainer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealContainer\MyGameInstance.h">
+      <Filter>Source\UnrealContainer</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\UnrealContainer\UnrealContainer.Build.cs">
+      <Filter>Source\UnrealContainer</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnrealContainer\UnrealContainer.cpp">
+      <Filter>Source\UnrealContainer</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealContainer\UnrealContainer.h">
+      <Filter>Source\UnrealContainer</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
