@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnrealMemory.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealMemory.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnrealMemoryEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnrealMemory">
+      <UniqueIdentifier>{095B9A8C-E1BD-33FA-8DB8-48925AC21103}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealMemory\MyGameInstance.cpp">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealMemory\MyGameInstance.h">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealMemory\Student.cpp">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealMemory\Student.h">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealMemory\StudentManager.cpp">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealMemory\StudentManager.h">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\UnrealMemory\UnrealMemory.Build.cs">
+      <Filter>Source\UnrealMemory</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnrealMemory\UnrealMemory.cpp">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealMemory\UnrealMemory.h">
+      <Filter>Source\UnrealMemory</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

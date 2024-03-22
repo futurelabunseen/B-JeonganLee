@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealMemory",
+			"Path": "..\\Source\\UnrealMemory.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealMemoryEditor",
+			"Path": "..\\Source\\UnrealMemoryEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
