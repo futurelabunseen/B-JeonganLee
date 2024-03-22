@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealComposition",
+			"Path": "..\\Source\\UnrealComposition.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealCompositionEditor",
+			"Path": "..\\Source\\UnrealCompositionEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

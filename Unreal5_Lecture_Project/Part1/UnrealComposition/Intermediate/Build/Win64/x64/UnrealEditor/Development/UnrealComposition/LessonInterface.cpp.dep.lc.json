@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealcomposition\\source\\unrealcomposition\\lessoninterface.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealcomposition\\intermediate\\build\\win64\\x64\\unrealcompositioneditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealcomposition\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealcomposition\\definitions.unrealcomposition.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealcomposition\\source\\unrealcomposition\\lessoninterface.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealcomposition\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealcomposition\\uht\\lessoninterface.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

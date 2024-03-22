@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealComposition\\Source\\UnrealComposition\\UnrealComposition.Build.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealComposition\\Source\\UnrealComposition.Target.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealComposition\\Source\\UnrealCompositionEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
