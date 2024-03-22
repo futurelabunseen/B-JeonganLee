@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealContainer",
+			"Path": "..\\Source\\UnrealContainer.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealContainerEditor",
+			"Path": "..\\Source\\UnrealContainerEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
