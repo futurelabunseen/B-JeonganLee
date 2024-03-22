@@ -1,0 +1,22 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealdelegate\\source\\unrealdelegate\\card.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealdelegate\\intermediate\\build\\win64\\x64\\unrealdelegateeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealdelegate\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealdelegate\\definitions.unrealdelegate.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealdelegate\\source\\unrealdelegate\\card.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\noexporttypes.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\propertyaccessutil.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\serialization\\testundeclaredscriptstructobjectreferences.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealdelegate\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealdelegate\\uht\\card.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

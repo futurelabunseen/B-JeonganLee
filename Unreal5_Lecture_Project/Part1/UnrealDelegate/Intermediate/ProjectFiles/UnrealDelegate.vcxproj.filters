@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\UnrealDelegate.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\UnrealDelegate.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\UnrealDelegateEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\.vsconfig" />
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\UnrealDelegate">
+      <UniqueIdentifier>{3B74E1F5-F5C0-3FEA-A161-62515A9D1ECC}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UnrealDelegate\Card.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\Card.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\CourseInfo.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\CourseInfo.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\LessonInterface.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\LessonInterface.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\MyGameInstance.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\MyGameInstance.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\person.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\person.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\Staff.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\Staff.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\Student.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\Student.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UnrealDelegate\Teacher.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\Teacher.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+    <None Include="..\..\Source\UnrealDelegate\UnrealDelegate.Build.cs">
+      <Filter>Source\UnrealDelegate</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\UnrealDelegate\UnrealDelegate.cpp">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealDelegate\UnrealDelegate.h">
+      <Filter>Source\UnrealDelegate</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
