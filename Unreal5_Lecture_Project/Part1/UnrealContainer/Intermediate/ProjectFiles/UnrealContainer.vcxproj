@@ -120,6 +120,12 @@
       <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <ClInclude Include="..\..\Source\UnrealContainer\MyGameInstance.h"/>
+    <ClCompile Include="..\..\Source\UnrealContainer\Student.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ClCompile_ForcedIncludeFiles)</ForcedIncludeFiles>
+      <AdditionalOptions>$(ClCompile_AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UnrealContainer\Student.h"/>
     <None Include="..\..\Source\UnrealContainer\UnrealContainer.Build.cs"/>
     <ClCompile Include="..\..\Source\UnrealContainer\UnrealContainer.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
