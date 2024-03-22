@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealMemory\\Source\\UnrealMemory\\UnrealMemory.Build.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealMemory\\Source\\UnrealMemory.Target.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealMemory\\Source\\UnrealMemoryEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
