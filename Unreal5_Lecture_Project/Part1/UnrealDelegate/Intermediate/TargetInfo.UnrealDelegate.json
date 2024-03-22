@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealDelegate",
+			"Path": "..\\Source\\UnrealDelegate.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealDelegateEditor",
+			"Path": "..\\Source\\UnrealDelegateEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
