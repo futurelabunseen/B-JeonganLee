@@ -69,6 +69,12 @@
     <ClInclude Include="..\..\Source\ArenaBattle\Character\ABCharacterPlayer.h">
       <Filter>Source\ArenaBattle\Character</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Character\ABComboActionData.cpp">
+      <Filter>Source\ArenaBattle\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Character\ABComboActionData.h">
+      <Filter>Source\ArenaBattle\Character</Filter>
+    </ClInclude>
     <Filter Include="Source\ArenaBattle\Game">
       <UniqueIdentifier>{BA4B853F-C76F-3DE7-8FB0-057E8C009878}</UniqueIdentifier>
     </Filter>
