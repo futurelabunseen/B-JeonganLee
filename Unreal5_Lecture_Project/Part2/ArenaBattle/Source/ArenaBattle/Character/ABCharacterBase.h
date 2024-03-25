@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Interface/ABAnimationAttackInterface.h"
 #include "ABCharacterBase.generated.h"
 
 UENUM()
@@ -14,7 +15,7 @@ enum class ECharacterControlType : uint8
 };
 
 UCLASS()
-class ARENABATTLE_API AABCharacterBase : public ACharacter
+class ARENABATTLE_API AABCharacterBase : public ACharacter, public IABAnimationAttackInterface
 {
 	GENERATED_BODY()
 
@@ -55,4 +56,19 @@ protected:
 	// 언리얼 엔진 월드에서 제공하는 특정 타이머 기능을 사용할 수 있는 구조체
 	FTimerHandle ComboTimerHandle; 
 	bool HasNextComboCommand = false;
+
+	// AttackHit Section
+protected:
+	virtual void AttackHitCheck() override;
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+
+	// Dead Section
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Stat, Meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UAnimMontage> DeadMontage;
+
+	virtual void SetDead();
+	void PlayDeadAnimation();
+
+	float DeadEventDelayTime = 5.0f;
 };
