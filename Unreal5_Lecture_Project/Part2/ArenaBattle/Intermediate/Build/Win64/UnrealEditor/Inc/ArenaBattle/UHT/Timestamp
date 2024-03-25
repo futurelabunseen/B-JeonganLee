@@ -1,8 +1,11 @@
-D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Animation\ABAnimInstance.h
 D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Character\ABCharacterBase.h
+D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Animation\AnimNotify_AttackHitCheck.h
+D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Animation\ABAnimInstance.h
+D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Character\ABCharacterNonPlayer.h
+D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Character\ABComboActionData.h
+D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Interface\ABAnimationAttackInterface.h
 D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Character\ABCharacterPlayer.h
 D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Character\ABCharacterControlData.h
-D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Prop\AB_Fountain.h
 D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Player\ABPlayerController.h
 D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Game\ABGameMode.h
-D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Character\ABComboActionData.h
+D:\B-JeonganLee\Unreal5_Lecture_Project\Part2\ArenaBattle\Source\ArenaBattle\Prop\AB_Fountain.h

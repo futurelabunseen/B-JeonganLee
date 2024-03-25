@@ -48,6 +48,12 @@
     <ClInclude Include="..\..\Source\ArenaBattle\Animation\ABAnimInstance.h">
       <Filter>Source\ArenaBattle\Animation</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Animation\AnimNotify_AttackHitCheck.cpp">
+      <Filter>Source\ArenaBattle\Animation</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Animation\AnimNotify_AttackHitCheck.h">
+      <Filter>Source\ArenaBattle\Animation</Filter>
+    </ClInclude>
     <Filter Include="Source\ArenaBattle\Character">
       <UniqueIdentifier>{F12A4E44-52A2-3676-A6C4-7E4B2637E7A7}</UniqueIdentifier>
     </Filter>
@@ -61,6 +67,12 @@
       <Filter>Source\ArenaBattle\Character</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\ArenaBattle\Character\ABCharacterControlData.h">
+      <Filter>Source\ArenaBattle\Character</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Character\ABCharacterNonPlayer.cpp">
+      <Filter>Source\ArenaBattle\Character</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Character\ABCharacterNonPlayer.h">
       <Filter>Source\ArenaBattle\Character</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\ArenaBattle\Character\ABCharacterPlayer.cpp">
@@ -83,6 +95,21 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\ArenaBattle\Game\ABGameMode.h">
       <Filter>Source\ArenaBattle\Game</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaBattle\Interface">
+      <UniqueIdentifier>{90A4245C-9C79-3DD9-8729-EB5EBDB20089}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaBattle\Interface\ABAnimationAttackInterface.cpp">
+      <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Interface\ABAnimationAttackInterface.h">
+      <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaBattle\Physics">
+      <UniqueIdentifier>{F345D2F0-E7D7-3CF8-BE52-D6A246326902}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\ArenaBattle\Physics\ABCollision.h">
+      <Filter>Source\ArenaBattle\Physics</Filter>
     </ClInclude>
     <Filter Include="Source\ArenaBattle\Player">
       <UniqueIdentifier>{8904986B-7200-3F65-968C-D810E678D1C5}</UniqueIdentifier>

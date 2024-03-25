@@ -15,6 +15,8 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\rootmotionsource.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\rootmotionsource.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\character.generated.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\source\\arenabattle\\interface\\abanimationattackinterface.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abanimationattackinterface.generated.h",
             "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abcharacterbase.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\capsulecomponent.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\components\\shapecomponent.h",
@@ -39,7 +41,12 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponentasync.generated.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\charactermovementcomponent.generated.h",
             "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\source\\arenabattle\\character\\abcharactercontroldata.h",
-            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abcharactercontroldata.generated.h"
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abcharactercontroldata.generated.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\source\\arenabattle\\character\\abcomboactiondata.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\intermediate\\build\\win64\\unrealeditor\\inc\\arenabattle\\uht\\abcomboactiondata.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\damageevents.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\damageevents.generated.h",
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part2\\arenabattle\\source\\arenabattle\\physics\\abcollision.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
