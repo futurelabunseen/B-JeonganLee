@@ -6,7 +6,6 @@
 			"description": "Default Uncontrolled Changelist",
 			"files": [
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Maps/Step2.umap",
-				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Maps/Step3.umap",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Blueprint/BP_Fountain.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Input/Actions/IA_Jump.uasset",
@@ -21,6 +20,10 @@
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Input/IMC_Quater.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Animation/ABP_ABCharacter.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Animation/BS_IdleWalkRun.uasset",
+				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Animation/AM_ComboAttack.uasset",
+				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Input/Actions/IA_Attack.uasset",
+				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/CharacterAction/ABA_ComboAttack.uasset",
+				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Input/IMC_Default.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Input/Actions/IA_Move.uasset",
 				"D:/B-JeonganLee/Unreal5_Lecture_Project/Part2/ArenaBattle/Content/ArenaBattle/Input/Actions/IA_Look.uasset",

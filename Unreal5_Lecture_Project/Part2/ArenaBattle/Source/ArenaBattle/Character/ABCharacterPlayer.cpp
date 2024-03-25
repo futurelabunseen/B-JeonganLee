@@ -51,6 +51,12 @@ AABCharacterPlayer::AABCharacterPlayer()
 		QuaterMoveAction = InputActionQuaterMoveRef.Object;
 	}
 
+	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionAttackRef(TEXT("/Script/EnhancedInput.InputAction'/Game/ArenaBattle/Input/Actions/IA_Attack.IA_Attack'"));
+	if (nullptr != InputActionAttackRef.Object)
+	{
+		AttackAction = InputActionAttackRef.Object;
+	}
+
 	// 현재 상태 기본값으로 초기화 (Quater로 시작)
 	CurrentCharacterControlType = ECharacterControlType::Quater;
 }
@@ -74,6 +80,7 @@ void AABCharacterPlayer::SetupPlayerInputComponent(class UInputComponent* Player
 	EnhancedInputComponent->BindAction(ShoulderLookAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ShoulderLook);
 	EnhancedInputComponent->BindAction(QuaterMoveAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::QuaterMove);
 	EnhancedInputComponent->BindAction(ChangeControlAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::ChangeCharacterControl);
+	EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &AABCharacterPlayer::Attack);
 	// 각 키 입력에 대한 액션을 바인딩합니다.
 	// ex 점프 액션의 Triggered 이벤트에 Jump 함수를 바인딩합니다. Completed 이벤트에 StopJumping 함수를 바인딩합니다.
 	// (점프는 `ACharacter` 클래스에 정의된 함수를 매핑하지만, Move와 Look는 `AABCharacterPlayer` 클래스로 연결되기에 직접 구현
@@ -173,4 +180,9 @@ void AABCharacterPlayer::QuaterMove(const FInputActionValue& Value)
 	FVector MoveDirection = FVector(MovementVector.X, MovementVector.Y, 0.0f);
 	GetController()->SetControlRotation(FRotationMatrix::MakeFromX(MoveDirection).Rotator());
 	AddMovementInput(MoveDirection, MovementVectorSize);
+}
+
+void AABCharacterPlayer::Attack()
+{
+	ProcessComboCommand();
 }
