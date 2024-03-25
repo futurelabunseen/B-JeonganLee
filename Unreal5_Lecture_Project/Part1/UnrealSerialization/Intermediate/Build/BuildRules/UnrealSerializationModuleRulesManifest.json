@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealSerialization\\Source\\UnrealSerialization\\UnrealSerialization.Build.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealSerialization\\Source\\UnrealSerialization.Target.cs",
+		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealSerialization\\Source\\UnrealSerializationEditor.Target.cs"
+	],
+	"EngineVersion": "5.3.2"
+}
