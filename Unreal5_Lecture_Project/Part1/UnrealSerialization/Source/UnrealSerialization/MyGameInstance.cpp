@@ -1,10 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "MyGameInstance.h"
-
-#include "JsonObjectConverter.h"
 #include "Student.h"
+#include "JsonObjectConverter.h"
+#include "UObject/SavePackage.h"
+
+const FString UMyGameInstance::PackageName = TEXT("/Game/Student");
+const FString UMyGameInstance::AssetName = TEXT("TopStudent");
 
 void PrintStudentInfo(const UStudent* InStudent, const FString& InTag)
 {
@@ -13,26 +13,32 @@ void PrintStudentInfo(const UStudent* InStudent, const FString& InTag)
 
 UMyGameInstance::UMyGameInstance()
 {
+	const FString TopSoftObjectPath = FString::Printf(TEXT("%s.%s"), *PackageName, *AssetName);
+	static ConstructorHelpers::FObjectFinder<UStudent> UASSET_TopStudent(*TopSoftObjectPath);
+	if (UASSET_TopStudent.Succeeded())
+	{
+		PrintStudentInfo(UASSET_TopStudent.Object, TEXT("Constructor"));
+	}
 }
 
 void UMyGameInstance::Init()
 {
 	Super::Init();
 
-	FStudentData RawDataSrc(16, TEXT("이정안"));
+	FStudentData RawDataSrc(16, TEXT("이득우"));
 
-	const FString SaveDir = FPaths::Combine(FPlatformMisc::ProjectDir(), TEXT("Saved"));
-	UE_LOG(LogTemp, Log, TEXT("저장할 파일 폴더: %s"), *SaveDir);
+	const FString SavedDir = FPaths::Combine(FPlatformMisc::ProjectDir(), TEXT("Saved"));
+	UE_LOG(LogTemp, Log, TEXT("저장할 파일 폴더 : %s"), *SavedDir);
 
 	{
-		const FString RawDataFileName("RawData.bin");
-		FString RawDataAbsolutePath = FPaths::Combine(*SaveDir, *RawDataFileName);
-		UE_LOG(LogTemp, Log, TEXT("저장할 파일 전체 경로: %s"), *RawDataAbsolutePath);
-		FPaths::MakeStandardFilename(RawDataAbsolutePath);
-		UE_LOG(LogTemp, Log, TEXT("변경할 파일 전체 경로: %s"), *RawDataAbsolutePath);
+		const FString RawDataFileName(TEXT("RawData.bin"));
+		FString RawDataAbosolutePath = FPaths::Combine(*SavedDir, *RawDataFileName);
+		UE_LOG(LogTemp, Log, TEXT("저장할 파일 전체 경로 : %s"), *RawDataAbosolutePath);
+		FPaths::MakeStandardFilename(RawDataAbosolutePath);
+		UE_LOG(LogTemp, Log, TEXT("변경할 파일 전체 경로 : %s"), *RawDataAbosolutePath);
 
-		FArchive* RawFileWriterAr = IFileManager::Get().CreateFileWriter(*RawDataAbsolutePath);
-		if (RawFileWriterAr)
+		FArchive* RawFileWriterAr = IFileManager::Get().CreateFileWriter(*RawDataAbosolutePath);
+		if (nullptr != RawFileWriterAr)
 		{
 			*RawFileWriterAr << RawDataSrc;
 			RawFileWriterAr->Close();
@@ -41,36 +47,31 @@ void UMyGameInstance::Init()
 		}
 
 		FStudentData RawDataDest;
-		FArchive* RawFileReaderAr = IFileManager::Get().CreateFileReader(*RawDataAbsolutePath);
-		if (RawFileReaderAr)
+		FArchive* RawFileReaderAr = IFileManager::Get().CreateFileReader(*RawDataAbosolutePath);
+		if (nullptr != RawFileReaderAr)
 		{
 			*RawFileReaderAr << RawDataDest;
 			RawFileReaderAr->Close();
 			delete RawFileReaderAr;
 			RawFileReaderAr = nullptr;
 
-			UE_LOG(LogTemp, Log, TEXT("[RawData]: 이름 %s 순번 %d"), *RawDataDest.Name, RawDataDest.Order);
+			UE_LOG(LogTemp, Log, TEXT("[RawData] 이름 %s 순번 %d"), *RawDataDest.Name, RawDataDest.Order);
 		}
 	}
 
-	// Unreal Obj Serilization
-	
 	StudentSrc = NewObject<UStudent>();
-	StudentSrc->SetOrder(42);
-	StudentSrc->SetName("이정안");
+	StudentSrc->SetName(TEXT("이득우"));
+	StudentSrc->SetOrder(59);
 
 	{
 		const FString ObjectDataFileName(TEXT("ObjectData.bin"));
-		FString ObjectDataAbsolutePath = FPaths::Combine(*SaveDir, *ObjectDataFileName);
+		FString ObjectDataAbsolutePath = FPaths::Combine(*SavedDir, *ObjectDataFileName);
 		FPaths::MakeStandardFilename(ObjectDataAbsolutePath);
 
-		// 직렬화를 위한 버퍼 (언리얼 형식)
 		TArray<uint8> BufferArray;
 		FMemoryWriter MemoryWriterAr(BufferArray);
-		// 간단하게 Serialize 함수를 호출하여 직렬화를 수행한다.
 		StudentSrc->Serialize(MemoryWriterAr);
-
-		// 스마트 포인터 라이브러리를 사용하여 위에서 한 nullptr이나 delete를 대체한다.
+		
 		if (TUniquePtr<FArchive> FileWriterAr = TUniquePtr<FArchive>(IFileManager::Get().CreateFileWriter(*ObjectDataAbsolutePath)))
 		{
 			*FileWriterAr << BufferArray;
@@ -80,7 +81,6 @@ void UMyGameInstance::Init()
 		TArray<uint8> BufferArrayFromFile;
 		if (TUniquePtr<FArchive> FileReaderAr = TUniquePtr<FArchive>(IFileManager::Get().CreateFileReader(*ObjectDataAbsolutePath)))
 		{
-			// 컨텍스트로 읽기, 쓰기를 구분 / 오퍼레이터는 동일
 			*FileReaderAr << BufferArrayFromFile;
 			FileReaderAr->Close();
 		}
@@ -91,17 +91,15 @@ void UMyGameInstance::Init()
 		PrintStudentInfo(StudentDest, TEXT("ObjectData"));
 	}
 
-	// Json
 	{
 		const FString JsonDataFileName(TEXT("StudentJsonData.txt"));
-		FString JsonDataAbsolutePath = FPaths::Combine(*SaveDir, *JsonDataFileName);
+		FString JsonDataAbsolutePath = FPaths::Combine(*SavedDir, *JsonDataFileName);
 		FPaths::MakeStandardFilename(JsonDataAbsolutePath);
 
 		TSharedRef<FJsonObject> JsonObjectSrc = MakeShared<FJsonObject>();
 		FJsonObjectConverter::UStructToJsonObject(StudentSrc->GetClass(), StudentSrc, JsonObjectSrc);
-		
+
 		FString JsonOutString;
-		// null이 아님을 보장 (만들기 때문에, 있다면 접근)
 		TSharedRef<TJsonWriter<TCHAR>> JsonWriterAr = TJsonWriterFactory<TCHAR>::Create(&JsonOutString);
 		if (FJsonSerializer::Serialize(JsonObjectSrc, JsonWriterAr))
 		{
@@ -114,7 +112,6 @@ void UMyGameInstance::Init()
 		TSharedRef<TJsonReader<TCHAR>> JsonReaderAr = TJsonReaderFactory<TCHAR>::Create(JsonInString);
 
 		TSharedPtr<FJsonObject> JsonObjectDest;
-		// but 읽어들어야 하기에 null이 될 수 있음 따라서 TSharedPtr로 받아야 함
 		if (FJsonSerializer::Deserialize(JsonReaderAr, JsonObjectDest))
 		{
 			UStudent* JsonStudentDest = NewObject<UStudent>();
@@ -124,4 +121,84 @@ void UMyGameInstance::Init()
 			}
 		}
 	}
+
+	SaveStudentPackage();
+	//LoadStudentPackage();
+	//LoadStudentObject();
+
+	const FString TopSoftObjectPath = FString::Printf(TEXT("%s.%s"), *PackageName, *AssetName);
+	Handle = StreamableManager.RequestAsyncLoad(TopSoftObjectPath,
+		[&]()
+		{
+			if (Handle.IsValid() && Handle->HasLoadCompleted())
+			{
+				UStudent* TopStudent = Cast<UStudent>(Handle->GetLoadedAsset());
+				if (TopStudent)
+				{
+					PrintStudentInfo(TopStudent, TEXT("AsyncLoad"));
+
+					Handle->ReleaseHandle();
+					Handle.Reset();
+				}
+			}
+		}
+	);
+}
+
+void UMyGameInstance::SaveStudentPackage() const
+{
+	UPackage* StudentPackage = ::LoadPackage(nullptr, *PackageName, LOAD_None);
+	if (StudentPackage)
+	{
+		StudentPackage->FullyLoad();
+	}
+
+	StudentPackage = CreatePackage(*PackageName);
+	EObjectFlags ObjectFlag = RF_Public | RF_Standalone;
+
+	UStudent* TopStudent = NewObject<UStudent>(StudentPackage, UStudent::StaticClass(), *AssetName, ObjectFlag);
+	TopStudent->SetName(TEXT("이득우"));
+	TopStudent->SetOrder(36);
+
+	const int32 NumofSubs = 10;
+	for (int32 ix = 1; ix <= NumofSubs; ++ix)
+	{
+		FString SubObjectName = FString::Printf(TEXT("Student%d"), ix);
+		UStudent* SubStudent = NewObject<UStudent>(TopStudent, UStudent::StaticClass(), *SubObjectName, ObjectFlag);
+		SubStudent->SetName(FString::Printf(TEXT("학생%d"), ix));
+		SubStudent->SetOrder(ix);
+	}
+
+	const FString PackageFileName = FPackageName::LongPackageNameToFilename(PackageName, FPackageName::GetAssetPackageExtension());
+	FSavePackageArgs SaveArgs;
+	SaveArgs.TopLevelFlags = ObjectFlag;
+
+	if (UPackage::SavePackage(StudentPackage, nullptr, *PackageFileName, SaveArgs))
+	{
+		UE_LOG(LogTemp, Log, TEXT("패키지가 성공적으로 저장되었습니다."));
+	}
+
+}
+
+void UMyGameInstance::LoadStudentPackage() const
+{
+	UPackage* StudentPackage = ::LoadPackage(nullptr, *PackageName, LOAD_None);
+	if (nullptr == StudentPackage)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("패키지를 찾을 수 없습니다."));
+		return;
+	}
+
+	StudentPackage->FullyLoad();
+
+	UStudent* TopStudent = FindObject<UStudent>(StudentPackage, *AssetName);
+	PrintStudentInfo(TopStudent, TEXT("FindObject Asset"));
+}
+
+void UMyGameInstance::LoadStudentObject() const
+{
+	const FString TopSoftObjectPath = FString::Printf(TEXT("%s.%s"), *PackageName, *AssetName);
+
+	UStudent* TopStudent = LoadObject<UStudent>(nullptr, *TopSoftObjectPath);
+	PrintStudentInfo(TopStudent, TEXT("LoadObject Asset"));
 }

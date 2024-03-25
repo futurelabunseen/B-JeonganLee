@@ -19,7 +19,16 @@
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\math\\unitconversion.inl",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\internationalization\\polyglottextdata.h",
             "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\assetregistry\\arfilter.h",
-            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealserialization\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealserialization\\uht\\student.generated.h"
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealserialization\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealserialization\\uht\\student.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\coreuobject\\public\\uobject\\savepackage.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\serialization\\packagewriter.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\io\\iodispatcher.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\io\\iobuffer.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\io\\iocontainerid.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\io\\iostatus.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\misc\\ienginecrypto.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\tasks\\task.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\core\\public\\serialization\\compactbinary.h"
         ],
         "ImportedModules": [],
         "ImportedHeaderUnits": []
