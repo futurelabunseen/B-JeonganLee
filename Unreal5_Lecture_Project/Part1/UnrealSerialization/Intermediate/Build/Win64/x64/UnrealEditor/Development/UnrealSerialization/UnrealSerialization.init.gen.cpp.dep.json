@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealserialization\\intermediate\\build\\win64\\unrealeditor\\inc\\unrealserialization\\uht\\unrealserialization.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealserialization\\intermediate\\build\\win64\\x64\\unrealserializationeditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\unreal5_lecture_project\\part1\\unrealserialization\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\unrealserialization\\definitions.unrealserialization.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

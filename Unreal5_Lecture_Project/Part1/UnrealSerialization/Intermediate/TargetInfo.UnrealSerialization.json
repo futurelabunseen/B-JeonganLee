@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UnrealSerialization",
+			"Path": "..\\Source\\UnrealSerialization.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UnrealSerializationEditor",
+			"Path": "..\\Source\\UnrealSerializationEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
