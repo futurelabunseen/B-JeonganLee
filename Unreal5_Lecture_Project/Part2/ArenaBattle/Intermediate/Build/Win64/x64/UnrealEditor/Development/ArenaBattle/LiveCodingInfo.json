@@ -1,5 +1,41 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.ArenaBattle.cpp.obj": [
+			"ABAnimationAttackInterface.gen.cpp.obj",
+			"ABAnimInstance.gen.cpp.obj",
+			"ABCharacterBase.gen.cpp.obj",
+			"ABCharacterControlData.gen.cpp.obj",
+			"ABCharacterNonPlayer.gen.cpp.obj",
+			"ABCharacterPlayer.gen.cpp.obj",
+			"ABCharacterStatComponent.gen.cpp.obj",
+			"ABCharacterWidgetInterface.gen.cpp.obj",
+			"ABComboActionData.gen.cpp.obj",
+			"ABGameMode.gen.cpp.obj",
+			"ABHpBarWidget.gen.cpp.obj",
+			"ABMyWidgetComponent.gen.cpp.obj",
+			"ABPlayerController.gen.cpp.obj",
+			"ABUserWidget.gen.cpp.obj",
+			"AB_Fountain.gen.cpp.obj",
+			"AnimNotify_AttackHitCheck.gen.cpp.obj",
+			"ArenaBattle.init.gen.cpp.obj",
+			"ABAnimInstance.cpp.obj",
+			"AnimNotify_AttackHitCheck.cpp.obj",
+			"ArenaBattle.cpp.obj",
+			"ABCharacterStatComponent.cpp.obj",
+			"ABCharacterBase.cpp.obj",
+			"ABCharacterControlData.cpp.obj",
+			"ABCharacterNonPlayer.cpp.obj",
+			"ABCharacterPlayer.cpp.obj",
+			"ABComboActionData.cpp.obj",
+			"ABGameMode.cpp.obj",
+			"ABAnimationAttackInterface.cpp.obj",
+			"ABCharacterWidgetInterface.cpp.obj",
+			"ABPlayerController.cpp.obj",
+			"AB_Fountain.cpp.obj",
+			"ABHpBarWidget.cpp.obj",
+			"ABMyWidgetComponent.cpp.obj",
+			"ABUserWidget.cpp.obj"
+		]
 	}
 }

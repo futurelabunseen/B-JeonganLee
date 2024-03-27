@@ -24,7 +24,7 @@ private: \
 	static void StaticRegisterNativesUABHpBarWidget(); \
 	friend struct Z_Construct_UClass_UABHpBarWidget_Statics; \
 public: \
-	DECLARE_CLASS(UABHpBarWidget, UUserWidget, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ArenaBattle"), NO_API) \
+	DECLARE_CLASS(UABHpBarWidget, UABUserWidget, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/ArenaBattle"), NO_API) \
 	DECLARE_SERIALIZER(UABHpBarWidget)
 
 

@@ -238,3 +238,102 @@ void UABCharacterStatComponent::SetHp(float NewHp)
 - Action동작과 동일.
 
 ## 액터의 초기화 과정
+
+### 액터의 라이프 싸이클
+
+- [공식 문서](https://dev.epicgames.com/documentation/ko-kr/unreal-engine/unreal-engine-actor-lifecycle?application_version=5.3)
+
+정리하자면 액터를 최종적으로 마무리하고자 할 때는 `PostInitializeComponents`라는 함수를 통해 초기화를 마무리한다. (에디터 실행 전 마무리 작업) 이후 `BeginPlay` 함수를 통해 게임 실행 전 초기화 작업을 마무리한다. (게임 실행 전 마무리 작업) 이후에는 `Tick` 함수를 통해 게임 실행 중 작업을 진행한다. (게임 실행 중 작업)
+
+### 위젯 컴포넌트와 위젯
+
+위젯 컴포넌트는 Actor 이외의 UI 위젯을 띄워주는 컴포넌트에 불과하다. 내부적으로 2D와 3D모두 지원하며 위젯 컴포넌트는 컨테이너의 역할만 할 뿐, 둘은 서로 독립적으로 동작한다. (위젯과 위젯 컴포넌트)
+
+### 위젯 컴포넌트의 초기화 과정
+
+(현재 위젯과 실제 스탯의 통신을 위해 초기화 과정을 알아야 한다.) 발행 구독 모델의 구현을 위해 위젯 컴포넌트의 초기화 단계를 파악할 필요가 있다. UI 관련 컴포넌트는 액터의 `BeginPlay` 이후에 호출되고 있다. 생성시 `InitWidget`함수와 `NativeConstruct`함수가 호출되며, 이를 ㅌ오해 차우에 변경될 가능성을 염두해야 한다.
+
+하지만 지금은 소유한 액터의 정보를 알아올 수 없도록 설계가 되어 있다. 따라서 이를 확장하여 설계해야 한다.
+
+### 실습
+
+```cpp
+// ABCharacterBase.cpp
+#include "UI/ABHpBarWidget.h"
+#include "UI/ABMyWidgetComponent.h"
+
+// .. 생략
+// 서브 오브젝트 할당을 확장 클래스로 변경 (소유 액터를 알 수 있는 wIdget)
+HpBar = CreateDefaultSubobject<UABMyWidgetComponent>(TEXT("Widget"));
+
+// .. 생략
+
+void AABCharacterBase::PostInitializeComponents()
+{
+ Super::PostInitializeComponents();
+
+// 라이프서클중 PostInitializeComponents에서 위젯 초기화 죽음 메서드와 STAT 이벤트와 연결
+ Stat->OnHpZero.AddUObject(this, &AABCharacterBase::SetDead);
+}
+
+// 실제 데미지 주는 동작을 Stat에 일임
+ Stat->ApplyDamage(DamageAmount);
+  
+// .. 생략
+// 죽으면 위젯을 숨기는 동작
+HpBar->SetHiddenInGame(true);
+
+// .. 생략
+// 사용자 정의 인터페이스 구현체 (캐릭터간 의존성 x)
+void AABCharacterBase::SetupCharacterWidget(UABUserWidget* InUserWidget)
+{
+  //확장된 위젯 클래스로 캐스팅하고, 이를 통해 Stat 이벤트와 UI 바인딩
+ UABHpBarWidget* HpBarWidget = Cast<UABHpBarWidget>(InUserWidget);
+ if (HpBarWidget)
+ {
+  HpBarWidget->SetMaxHp(Stat->GetMaxHp());
+  HpBarWidget->UpdateHpBar(Stat->GetCurrentHp());
+  Stat->OnHpChanged.AddUObject(HpBarWidget, &UABHpBarWidget::UpdateHpBar);
+ }
+}
+```
+
+```cpp
+// ABHpBarWidget.cpp
+
+// 위 코드에서 사용하게 되는 인터페이스..
+#include "Interface/ABCharacterWidgetInterface.h"
+
+// 인터페이스로 캐스팅하여 실제 인터페이스의 인스턴스를 가져온다. (해당 함수를 포인팅하여 가져옴)
+// 확장으로 상위 액터의 정보를 가져올 수 있게 된다. (OwningActor)
+ IABCharacterWidgetInterface* CharacterWidget = Cast<IABCharacterWidgetInterface>(OwningActor);
+ if (CharacterWidget)
+ {
+  // 해당 인터페이스 함수를 호출하도록 함 (CharacterBase <-> HPBarWidget)
+  CharacterWidget->SetupCharacterWidget(this);
+ }
+```
+
+```cpp
+#include "UI/ABMyWidgetComponent.h"
+
+#include "ABUserWidget.h"
+
+// UWidgetComponent을 상속받아 확장
+void UABMyWidgetComponent::InitWidget()
+{
+ Super::InitWidget();
+
+ UABUserWidget* ABUserWidget = Cast<UABUserWidget>(GetWidget());
+ if (ABUserWidget)
+ {
+  ABUserWidget->SetOwningActor(GetOwner());
+ }
+}
+```
+
+## 정리
+
+- 액터 컴포넌트를 사용해 캐릭터가 가진 기능을 분산
+- 언리얼 델리게이트를 활용한 발행 구독 모델의 구현
+- 위젯 컴포넌트 초기화 시점을 파악하기 위한 기존 클래스 구조의 확장 설계

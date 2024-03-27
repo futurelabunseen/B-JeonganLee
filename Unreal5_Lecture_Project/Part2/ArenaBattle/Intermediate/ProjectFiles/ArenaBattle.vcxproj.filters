@@ -114,6 +114,12 @@
     <ClInclude Include="..\..\Source\ArenaBattle\Interface\ABAnimationAttackInterface.h">
       <Filter>Source\ArenaBattle\Interface</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Interface\ABCharacterWidgetInterface.cpp">
+      <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Interface\ABCharacterWidgetInterface.h">
+      <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClInclude>
     <Filter Include="Source\ArenaBattle\Physics">
       <UniqueIdentifier>{F345D2F0-E7D7-3CF8-BE52-D6A246326902}</UniqueIdentifier>
     </Filter>
@@ -145,6 +151,18 @@
       <Filter>Source\ArenaBattle\UI</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\ArenaBattle\UI\ABHpBarWidget.h">
+      <Filter>Source\ArenaBattle\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\UI\ABMyWidgetComponent.cpp">
+      <Filter>Source\ArenaBattle\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\UI\ABMyWidgetComponent.h">
+      <Filter>Source\ArenaBattle\UI</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\UI\ABUserWidget.cpp">
+      <Filter>Source\ArenaBattle\UI</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\UI\ABUserWidget.h">
       <Filter>Source\ArenaBattle\UI</Filter>
     </ClInclude>
   </ItemGroup>

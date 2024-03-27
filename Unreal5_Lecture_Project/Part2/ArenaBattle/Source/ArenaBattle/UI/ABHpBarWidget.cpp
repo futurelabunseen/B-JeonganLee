@@ -4,6 +4,7 @@
 #include "UI/ABHpBarWidget.h"
 
 #include "Components/ProgressBar.h"
+#include "Interface/ABCharacterWidgetInterface.h"
 
 // Super를 객체로 초기화하고 MaxHp를 -1로 초기화
 UABHpBarWidget::UABHpBarWidget(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer)
@@ -18,6 +19,12 @@ void UABHpBarWidget::NativeConstruct()
 	// GetWidgetFromName: UMG에서 이름으로 찾아서 반환 (Find와 비슷)
 	HpProgressBar = Cast<UProgressBar>(GetWidgetFromName(TEXT("PbHpBar")));
 	ensure(HpProgressBar);
+
+	IABCharacterWidgetInterface* CharacterWidget = Cast<IABCharacterWidgetInterface>(OwningActor);
+	if (CharacterWidget)
+	{
+		CharacterWidget->SetupCharacterWidget(this);
+	}
 }
 
 void UABHpBarWidget::UpdateHpBar(float NewCurrentHp)

@@ -11,8 +11,8 @@ void EmptyLinkFunctionForGeneratedCodeABHpBarWidget() {}
 // Cross Module References
 	ARENABATTLE_API UClass* Z_Construct_UClass_UABHpBarWidget();
 	ARENABATTLE_API UClass* Z_Construct_UClass_UABHpBarWidget_NoRegister();
+	ARENABATTLE_API UClass* Z_Construct_UClass_UABUserWidget();
 	UMG_API UClass* Z_Construct_UClass_UProgressBar_NoRegister();
-	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_ArenaBattle();
 // End Cross Module References
 	void UABHpBarWidget::StaticRegisterNativesUABHpBarWidget()
@@ -42,7 +42,7 @@ void EmptyLinkFunctionForGeneratedCodeABHpBarWidget() {}
 		static const UECodeGen_Private::FClassParams ClassParams;
 	};
 	UObject* (*const Z_Construct_UClass_UABHpBarWidget_Statics::DependentSingletons[])() = {
-		(UObject* (*)())Z_Construct_UClass_UUserWidget,
+		(UObject* (*)())Z_Construct_UClass_UABUserWidget,
 		(UObject* (*)())Z_Construct_UPackage__Script_ArenaBattle,
 	};
 	static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_UABHpBarWidget_Statics::DependentSingletons) < 16);
@@ -117,9 +117,9 @@ void EmptyLinkFunctionForGeneratedCodeABHpBarWidget() {}
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ArenaBattle_Source_ArenaBattle_UI_ABHpBarWidget_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UABHpBarWidget, UABHpBarWidget::StaticClass, TEXT("UABHpBarWidget"), &Z_Registration_Info_UClass_UABHpBarWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UABHpBarWidget), 3122853848U) },
+		{ Z_Construct_UClass_UABHpBarWidget, UABHpBarWidget::StaticClass, TEXT("UABHpBarWidget"), &Z_Registration_Info_UClass_UABHpBarWidget, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UABHpBarWidget), 123518015U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ArenaBattle_Source_ArenaBattle_UI_ABHpBarWidget_h_2211080161(TEXT("/Script/ArenaBattle"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ArenaBattle_Source_ArenaBattle_UI_ABHpBarWidget_h_3815029404(TEXT("/Script/ArenaBattle"),
 		Z_CompiledInDeferFile_FID_ArenaBattle_Source_ArenaBattle_UI_ABHpBarWidget_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ArenaBattle_Source_ArenaBattle_UI_ABHpBarWidget_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
