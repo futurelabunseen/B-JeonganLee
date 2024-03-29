@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "UghProject",
+			"Path": "..\\Source\\UghProject.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "UghProjectEditor",
+			"Path": "..\\Source\\UghProjectEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
