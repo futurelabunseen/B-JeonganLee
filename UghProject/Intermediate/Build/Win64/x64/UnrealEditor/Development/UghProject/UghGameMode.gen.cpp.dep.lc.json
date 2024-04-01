@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\unrealeditor\\inc\\ughproject\\uht\\ughgamemode.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\x64\\ughprojecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ughproject\\definitions.ughproject.h",
+            "d:\\b-jeonganlee\\ughproject\\source\\ughproject\\ughgamemode.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "c:\\program files\\epic games\\ue_5.3\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\unrealeditor\\inc\\ughproject\\uht\\ughgamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

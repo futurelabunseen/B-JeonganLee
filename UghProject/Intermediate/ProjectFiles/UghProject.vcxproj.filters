@@ -11,6 +11,7 @@
     <None Include="..\..\Source\UghProjectEditor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.vsconfig" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -29,6 +30,18 @@
     <Filter Include="Source\UghProject">
       <UniqueIdentifier>{C766EAB1-724D-31ED-9D07-6E0032711B24}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\UghProject\UGCharacterPlayer.cpp">
+      <Filter>Source\UghProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UghProject\UGCharacterPlayer.h">
+      <Filter>Source\UghProject</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\UghProject\UGGameMode.cpp">
+      <Filter>Source\UghProject</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UghProject\UGGameMode.h">
+      <Filter>Source\UghProject</Filter>
+    </ClInclude>
     <None Include="..\..\Source\UghProject\UghProject.Build.cs">
       <Filter>Source\UghProject</Filter>
     </None>
