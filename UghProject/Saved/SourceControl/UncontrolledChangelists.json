@@ -10,7 +10,16 @@
 				"D:/B-JeonganLee/UghProject/Content/Input/IA_Move.uasset",
 				"D:/B-JeonganLee/UghProject/Content/Input/IA_Look.uasset",
 				"D:/B-JeonganLee/UghProject/Content/Input/NewInputMappingContext.uasset",
-				"D:/B-JeonganLee/UghProject/Content/Input/IA_Jump.uasset"
+				"D:/B-JeonganLee/UghProject/Content/Input/IA_Jump.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/CyberpunkChar_0.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/CyberpunkChar_0_PhysicsAsset.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/CyberpunkChar_0_Skeleton.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/M_CyberpunkCharacter.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/TX_CyberpunkCharacter.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/IKA_Cyber.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/NewIKRig.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/IKR_Cyber.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Voxel/IKRetargeter_Cyber.uasset"
 			]
 		}
 	]
