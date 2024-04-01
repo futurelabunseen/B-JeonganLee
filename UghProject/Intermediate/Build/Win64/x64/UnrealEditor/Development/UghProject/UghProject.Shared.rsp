@@ -258,6 +258,8 @@
 /I "Developer\WidgetRegistration\Public"
 /I "D:\B-JeonganLee\UghProject\Intermediate\Build\Win64\UnrealEditor\Inc\UghProject\UHT"
 /I "D:\B-JeonganLee\UghProject\Source"
+/I "..\Plugins\EnhancedInput\Intermediate\Build\Win64\UnrealEditor\Inc\EnhancedInput\UHT"
+/I "..\Plugins\EnhancedInput\Source\EnhancedInput\Public"
 /external:W0
 /external:I "ThirdParty\mimalloc\include"
 /external:I "ThirdParty\LibTiff\Source\Win64"

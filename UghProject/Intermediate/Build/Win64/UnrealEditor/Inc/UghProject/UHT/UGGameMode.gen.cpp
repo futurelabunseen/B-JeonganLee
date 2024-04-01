@@ -77,7 +77,6 @@ void EmptyLinkFunctionForGeneratedCodeUGGameMode() {}
 	{
 		return AUGGameMode::StaticClass();
 	}
-	AUGGameMode::AUGGameMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(AUGGameMode);
 	AUGGameMode::~AUGGameMode() {}
 	struct Z_CompiledInDeferFile_FID_UghProject_Source_UghProject_UGGameMode_h_Statics

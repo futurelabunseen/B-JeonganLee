@@ -29,8 +29,6 @@ public: \
 
 
 #define FID_UghProject_Source_UghProject_UGGameMode_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AUGGameMode(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AUGGameMode(AUGGameMode&&); \
@@ -38,7 +36,7 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AUGGameMode); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AUGGameMode); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AUGGameMode) \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AUGGameMode) \
 	NO_API virtual ~AUGGameMode();
 
 

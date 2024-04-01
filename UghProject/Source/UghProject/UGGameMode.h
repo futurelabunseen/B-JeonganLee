@@ -13,5 +13,7 @@ UCLASS()
 class UGHPROJECT_API AUGGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+public:
+	AUGGameMode();
 };

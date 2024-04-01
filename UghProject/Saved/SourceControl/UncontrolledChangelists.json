@@ -5,7 +5,12 @@
 			"guid": "00000000000000000000000000000000",
 			"description": "Default Uncontrolled Changelist",
 			"files": [
-				"D:/B-JeonganLee/UghProject/Content/Maps/ExampleMap.umap"
+				"D:/B-JeonganLee/UghProject/Content/Maps/ExampleMap.umap",
+				"D:/B-JeonganLee/UghProject/Content/Blueprints/BP_CharacterPlayer.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Input/IA_Move.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Input/IA_Look.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Input/NewInputMappingContext.uasset",
+				"D:/B-JeonganLee/UghProject/Content/Input/IA_Jump.uasset"
 			]
 		}
 	]
