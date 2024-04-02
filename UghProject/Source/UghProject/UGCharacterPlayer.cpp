@@ -39,6 +39,13 @@ AUGCharacterPlayer::AUGCharacterPlayer()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
+
+	static ConstructorHelpers::FClassFinder<UAnimInstance> AnimBPClass(TEXT("/Game/Voxel/ABP_Cyber2.ABP_Cyber2_C"));
+	if (AnimBPClass.Class != NULL)
+	{
+		GetMesh()->SetAnimInstanceClass(AnimBPClass.Class);
+	}
+	
 }
 
 void AUGCharacterPlayer::BeginPlay()

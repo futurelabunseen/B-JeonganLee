@@ -51,5 +51,14 @@
     <ClInclude Include="..\..\Source\UghProject\UghProject.h">
       <Filter>Source\UghProject</Filter>
     </ClInclude>
+    <Filter Include="Source\UghProject\Animation">
+      <UniqueIdentifier>{9437808C-C0CB-3D92-97AE-84DE5B7E6E11}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\UghProject\Animation\UGAnimInstance.cpp">
+      <Filter>Source\UghProject\Animation</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\UghProject\Animation\UGAnimInstance.h">
+      <Filter>Source\UghProject\Animation</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

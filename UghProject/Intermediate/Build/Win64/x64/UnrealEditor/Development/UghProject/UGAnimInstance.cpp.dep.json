@@ -1,0 +1,15 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\b-jeonganlee\\ughproject\\source\\ughproject\\animation\\uganiminstance.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\x64\\ughprojecteditor\\development\\engine\\sharedpch.engine.cpp20.h.pch",
+        "Includes": [
+            "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\ughproject\\definitions.ughproject.h",
+            "d:\\b-jeonganlee\\ughproject\\source\\ughproject\\animation\\uganiminstance.h",
+            "d:\\b-jeonganlee\\ughproject\\intermediate\\build\\win64\\unrealeditor\\inc\\ughproject\\uht\\uganiminstance.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}
