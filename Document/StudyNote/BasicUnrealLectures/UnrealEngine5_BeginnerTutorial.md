@@ -1,4 +1,4 @@
-# [언리얼 엔진 5: 고급 사용자를 위한 청사진](https://www.youtube.com/watch?v=XRmn-EYt8wI&t=7487s)
+# [언리얼 엔진 5: 초보자 튜토리얼](https://www.youtube.com/watch?v=XRmn-EYt8wI&t=7487s)
 
 - 이미 언리얼에서 제공하는 샘플 프로젝트를 분석해도 좋을 듯
   - 라일라 등등
