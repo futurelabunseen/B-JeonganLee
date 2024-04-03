@@ -5,9 +5,13 @@
 
 AUGGameMode::AUGGameMode()
 {
-	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/Blueprints/BP_CharacterPlayer"));
+	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Script/Engine.Blueprint'/Game/Ugh/Blueprints/BP_CharacterPlayer'"));
 	if (PlayerPawnBPClass.Class != NULL)
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
+	}
+	else
+	{
+		UE_LOG(LogTemp, Error, TEXT("Failed to find PlayerPawnBPClass"));
 	}
 }
