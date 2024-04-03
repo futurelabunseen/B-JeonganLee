@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealString\\Source\\UnrealString\\UnrealString.Build.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealString\\Source\\UnrealString.Target.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealString\\Source\\UnrealStringEditor.Target.cs"
-	],
-	"EngineVersion": "5.3.2"
-}

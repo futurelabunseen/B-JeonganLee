@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealInterface\\Source\\UnrealInterface\\UnrealInterface.Build.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealInterface\\Source\\UnrealInterface.Target.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealInterface\\Source\\UnrealInterfaceEditor.Target.cs"
-	],
-	"EngineVersion": "5.3.2"
-}

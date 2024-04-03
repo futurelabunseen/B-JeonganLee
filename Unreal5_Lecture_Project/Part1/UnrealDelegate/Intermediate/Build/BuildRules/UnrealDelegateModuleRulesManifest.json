@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealDelegate\\Source\\UnrealDelegate\\UnrealDelegate.Build.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealDelegate\\Source\\UnrealDelegate.Target.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealDelegate\\Source\\UnrealDelegateEditor.Target.cs"
-	],
-	"EngineVersion": "5.3.2"
-}

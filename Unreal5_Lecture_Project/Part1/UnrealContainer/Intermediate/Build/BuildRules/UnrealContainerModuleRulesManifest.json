@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealContainer\\Source\\UnrealContainer\\UnrealContainer.Build.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealContainer\\Source\\UnrealContainer.Target.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\UnrealContainer\\Source\\UnrealContainerEditor.Target.cs"
-	],
-	"EngineVersion": "5.3.2"
-}
