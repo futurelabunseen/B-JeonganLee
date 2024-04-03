@@ -114,11 +114,38 @@
     <ClInclude Include="..\..\Source\ArenaBattle\Interface\ABAnimationAttackInterface.h">
       <Filter>Source\ArenaBattle\Interface</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Interface\ABCharacterInterface.cpp">
+      <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Interface\ABCharacterInterface.h">
+      <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\ArenaBattle\Interface\ABCharacterWidgetInterface.cpp">
       <Filter>Source\ArenaBattle\Interface</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\ArenaBattle\Interface\ABCharacterWidgetInterface.h">
       <Filter>Source\ArenaBattle\Interface</Filter>
+    </ClInclude>
+    <Filter Include="Source\ArenaBattle\Item">
+      <UniqueIdentifier>{57B3983D-B310-39B4-B12E-45F0B39EC0B3}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\ArenaBattle\Item\ABItemBox.cpp">
+      <Filter>Source\ArenaBattle\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Item\ABItemBox.h">
+      <Filter>Source\ArenaBattle\Item</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Item\ABItemData.cpp">
+      <Filter>Source\ArenaBattle\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Item\ABItemData.h">
+      <Filter>Source\ArenaBattle\Item</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\ArenaBattle\Item\ABWeaponItemData.cpp">
+      <Filter>Source\ArenaBattle\Item</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\ArenaBattle\Item\ABWeaponItemData.h">
+      <Filter>Source\ArenaBattle\Item</Filter>
     </ClInclude>
     <Filter Include="Source\ArenaBattle\Physics">
       <UniqueIdentifier>{F345D2F0-E7D7-3CF8-BE52-D6A246326902}</UniqueIdentifier>

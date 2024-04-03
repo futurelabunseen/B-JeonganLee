@@ -5,8 +5,11 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Interface/ABAnimationAttackInterface.h"
+#include "Interface/ABCharacterItemInterface.h"
 #include "Interface/ABCharacterWidgetInterface.h"
 #include "ABCharacterBase.generated.h"
+
+DECLARE_LOG_CATEGORY_EXTERN(LogABCharacter, Log, All);
 
 UENUM()
 enum class ECharacterControlType : uint8
@@ -15,8 +18,20 @@ enum class ECharacterControlType : uint8
 	Quater
 };
 
+// 아이템을 획득했을 때 호출되는 델리게이트 이름은 FOnTakeItemDelegate이며 인자를 하나 가지며 인자는 UABItemData* 타입이다.
+DECLARE_DELEGATE_OneParam(FOnTakeItemDelegate, class UABItemData* /*InItemData*/);
+// 델리게이트로 변수를 만들 수 없기 때문에, 델리게이트를 래핑하는 구조체를 만들어서 변수로 사용한다.
+USTRUCT(BlueprintType)
+struct FTakeItemDelegateWrapper
+{
+	GENERATED_BODY()
+	FTakeItemDelegateWrapper() {}
+	FTakeItemDelegateWrapper(const FOnTakeItemDelegate& InItemDelegate) : ItemDelegate(InItemDelegate) {}	
+	FOnTakeItemDelegate ItemDelegate;
+};
+
 UCLASS()
-class ARENABATTLE_API AABCharacterBase : public ACharacter, public IABAnimationAttackInterface, public IABCharacterWidgetInterface
+class ARENABATTLE_API AABCharacterBase : public ACharacter, public IABAnimationAttackInterface, public IABCharacterWidgetInterface, public IABCharacterItemInterface
 {
 	GENERATED_BODY()
 
@@ -85,4 +100,17 @@ protected:
 	TObjectPtr<class UABMyWidgetComponent> HpBar;
 
 	virtual void SetupCharacterWidget(class UABUserWidget* InUserWidget) override;
+
+	// Item Section
+protected:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Equipment, Meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class USkeletalMeshComponent> Weapon;
+
+	UPROPERTY()
+	TArray<FTakeItemDelegateWrapper> TakeItemActions;
+	
+	virtual void TakeItem(class UABItemData* InItemData) override;
+	virtual void DrinkPotion(class UABItemData* InItemData);
+	virtual void EquipWeapon(class UABItemData* InItemData);
+	virtual void ReadScroll(class UABItemData* InItemData);
 };
