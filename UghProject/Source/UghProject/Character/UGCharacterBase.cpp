@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "UGCharacterPlayer.h"
+#include "UGCharacterBase.h"
 
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -13,7 +13,7 @@
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
 // Sets default values
-AUGCharacterPlayer::AUGCharacterPlayer()
+AUGCharacterBase::AUGCharacterBase()
 {
  	GetCapsuleComponent()->InitCapsuleSize(42.0f, 96.0f);
 
@@ -48,7 +48,7 @@ AUGCharacterPlayer::AUGCharacterPlayer()
 	
 }
 
-void AUGCharacterPlayer::BeginPlay()
+void AUGCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -61,15 +61,15 @@ void AUGCharacterPlayer::BeginPlay()
 	}
 }
 
-void AUGCharacterPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AUGCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(PlayerInputComponent))
 	{
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 		
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::Move);
-		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::Look);
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AUGCharacterBase::Move);
+		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AUGCharacterBase::Look);
 	}
 	else
 	{
@@ -78,7 +78,7 @@ void AUGCharacterPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 	
 }
 
-void AUGCharacterPlayer::Move(const FInputActionValue& Value)
+void AUGCharacterBase::Move(const FInputActionValue& Value)
 {
 	const FVector2D MovementVector = Value.Get<FVector2D>();
 
@@ -98,7 +98,7 @@ void AUGCharacterPlayer::Move(const FInputActionValue& Value)
 	}
 }
 
-void AUGCharacterPlayer::Look(const FInputActionValue& Value)
+void AUGCharacterBase::Look(const FInputActionValue& Value)
 {
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 

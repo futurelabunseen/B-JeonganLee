@@ -5,12 +5,12 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
-#include "UGCharacterPlayer.generated.h"
+#include "UGCharacterBase.generated.h"
 
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS()
-class UGHPROJECT_API AUGCharacterPlayer : public ACharacter
+class UGHPROJECT_API AUGCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -33,7 +33,7 @@ class UGHPROJECT_API AUGCharacterPlayer : public ACharacter
 	TObjectPtr<class UInputAction> LookAction;
 
 public:
-	AUGCharacterPlayer();
+	AUGCharacterBase();
 
 protected:
 

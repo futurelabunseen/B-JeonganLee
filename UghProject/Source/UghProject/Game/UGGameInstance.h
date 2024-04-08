@@ -3,16 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Animation/AnimInstance.h"
-#include "UGAnimInstance.generated.h"
+#include "Engine/GameInstance.h"
+#include "UGGameInstance.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class UGHPROJECT_API UUGAnimInstance : public UAnimInstance
+class UGHPROJECT_API UUGGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
-
-public:
+	
 };
