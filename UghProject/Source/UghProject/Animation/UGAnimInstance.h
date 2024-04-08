@@ -13,5 +13,6 @@ UCLASS()
 class UGHPROJECT_API UUGAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
-	
+
+public:
 };

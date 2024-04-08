@@ -8,10 +8,11 @@
 
 /**
  * 
- */
+ */  
 UCLASS()
 class UGHPROJECT_API AUGCharacterCyber : public AUGCharacterBase
 {
-	GENERATED_BODY()
+	GENERATED_BODY() 
 	
 };
+ 
