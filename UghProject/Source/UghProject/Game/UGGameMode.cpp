@@ -10,8 +10,10 @@ AUGGameMode::AUGGameMode()
 	{
 		DefaultPawnClass = PlayerPawnBPClass.Class;
 	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("Failed to find PlayerPawnBPClass"));
-	}
+
+	static ConstructorHelpers::FClassFinder<APlayerController> PlayerControllerClassRef(TEXT("/Script/UghProject.UGPlayerController"));
+    if (PlayerControllerClassRef.Class)
+    {
+    	PlayerControllerClass = PlayerControllerClassRef.Class;
+    }
 }

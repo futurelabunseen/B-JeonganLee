@@ -13,6 +13,8 @@ UCLASS()
 class UGHPROJECT_API AUGCharacterCyber : public AUGCharacterBase
 {
 	GENERATED_BODY() 
-	
+
+public:
+	AUGCharacterCyber();
 };
  
