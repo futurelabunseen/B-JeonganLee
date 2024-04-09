@@ -33,7 +33,7 @@ AUGCharacterBase::AUGCharacterBase()
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 300.0f;
+	CameraBoom->TargetArmLength = 500.0f;
 	CameraBoom->bUsePawnControlRotation = true;
 
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
@@ -103,8 +103,6 @@ void AUGCharacterBase::Move(const FInputActionValue& Value)
 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);
-
-		
 	}
 }
 
@@ -116,8 +114,6 @@ void AUGCharacterBase::Look(const FInputActionValue& Value)
 	{
 		AddControllerYawInput(LookAxisVector.X);
 		AddControllerPitchInput(LookAxisVector.Y);
-
-		UE_LOG(LogTemplateCharacter, Log, TEXT("LookAxisVector: %s"), *LookAxisVector.ToString());
 	}
 }
 
