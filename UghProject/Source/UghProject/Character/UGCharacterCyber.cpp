@@ -10,6 +10,5 @@ AUGCharacterCyber::AUGCharacterCyber()
 	{
 		GetMesh()->SetAnimInstanceClass(AnimInstanceClassRef.Class);
 	}
-
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Spawned AUGCharacterCyber!"));
+	
 }
