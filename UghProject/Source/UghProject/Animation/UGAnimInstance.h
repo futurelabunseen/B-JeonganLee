@@ -15,4 +15,6 @@ class UGHPROJECT_API UUGAnimInstance : public UAnimInstance
 	GENERATED_BODY()
 
 public:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Character)
+	uint8 bIsIdle : 1;
 };

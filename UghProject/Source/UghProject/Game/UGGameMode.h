@@ -14,6 +14,8 @@ class UGHPROJECT_API AUGGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+	virtual void StartPlay() override;
+
 public:
 	AUGGameMode();
 };

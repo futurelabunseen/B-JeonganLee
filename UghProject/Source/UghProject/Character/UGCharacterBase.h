@@ -46,7 +46,5 @@ protected:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 public:	
-
-	//FORCEINLINE USpringArmComponent* GetCameraBoom() const { return CameraBoom.Get(); }
-	//FORCEINLINE UCameraComponent* GetFollowCamera() const { return FollowCamera.Get(); }
+	
 };
