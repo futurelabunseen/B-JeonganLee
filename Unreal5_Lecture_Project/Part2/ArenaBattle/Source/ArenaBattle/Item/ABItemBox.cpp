@@ -3,7 +3,9 @@
 
 #include "Item/ABItemBox.h"
 
+#include "ABItemData.h"
 #include "Components/BoxComponent.h"
+#include "Engine/AssetManager.h"
 #include "Interface/ABCharacterItemInterface.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "Physics/ABCollision.h"
@@ -43,6 +45,26 @@ AABItemBox::AABItemBox()
 		Effect->bAutoActivate = false;
 	}
 	Effect->OnSystemFinished.AddDynamic(this, &AABItemBox::OnEffectFinished); // 이벤트 바인딩은 위쪽으로 빼는게 더 바람직해 보임..
+}
+
+void AABItemBox::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	UAssetManager& Manager = UAssetManager::Get();
+
+	TArray<FPrimaryAssetId> Assets;
+	Manager.GetPrimaryAssetIdList(TEXT("ABItemData"), Assets);
+	ensure(0 < Assets.Num());
+
+	int32 RandomIndex = FMath::RandRange(0, Assets.Num() - 1);
+	FSoftObjectPtr AssetPtr(Manager.GetPrimaryAssetPath(Assets[RandomIndex]));
+	if (AssetPtr.IsPending())
+	{
+		AssetPtr.LoadSynchronous();
+	}
+	Item = Cast<UABItemData>(AssetPtr.Get());
+	ensure(Item);
 }
 
 void AABItemBox::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepHitResult)
