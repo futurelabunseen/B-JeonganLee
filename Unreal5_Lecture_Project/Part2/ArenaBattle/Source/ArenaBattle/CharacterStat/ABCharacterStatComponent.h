@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "GameData/ABCharacterStat.h"
 #include "ABCharacterStatComponent.generated.h"
 
 // 델리게이트 발행 위쪽은 매개변수 x, 아래쪽은 매개변수 하나
@@ -29,20 +30,27 @@ public:
 	FOnHpChangedDelegate OnHpChanged;
 	
 	// 간단한 getter, setter라 inline으로 처리
-	FORCEINLINE float GetMaxHp() { return MaxHp; }
+	void SetLevelStat(int32 InNewLevel);
+	FORCEINLINE float GetCurrentLevel() const { return CurrentLevel; }
+	FORCEINLINE void SetModifierStat(const FABCharacterStat& InModifierStat) { ModifierStat = InModifierStat; }
+	FORCEINLINE FABCharacterStat GetTotalStat() const { return BaseStat + ModifierStat; }
 	FORCEINLINE float GetCurrentHp() { return CurrentHp; }
-
 	float ApplyDamage(float InDamage);
 	
 protected:
 	// HP변경할 때 사용하는 함수(필수로 입구와 출구를 하나로 만들고 내부에서 훅킹함)
 	void SetHp(float NewHp);
-	
-	// VisibleInstanceOnly 인스턴스마다 다르게 설정할 수 있다.
-	UPROPERTY(VisibleInstanceOnly, Category = Stat)
-	float MaxHp;
 
 	// Transient: 디스크에 저장하지 않는다. (공간 낭비 x)
 	UPROPERTY(Transient, VisibleInstanceOnly, Category = Stat)
 	float CurrentHp;
+
+	UPROPERTY(Transient, VisibleInstanceOnly, Category = Stat)
+	float CurrentLevel;
+	
+	UPROPERTY(Transient, VisibleInstanceOnly, Category = Stat, Meta = (AllowPrivateAccess = "true"))
+	FABCharacterStat BaseStat;
+
+	UPROPERTY(Transient, VisibleInstanceOnly, Category = Stat, Meta = (AllowPrivateAccess = "true"))
+	FABCharacterStat ModifierStat;
 };
