@@ -5,6 +5,7 @@
 
 #include "Character/ABCharacterNonPlayer.h"
 #include "Components/BoxComponent.h"
+#include "Interface/ABGameInterface.h"
 #include "Item/ABItemBox.h"
 #include "Physics/ABCollision.h"
 
@@ -193,6 +194,16 @@ void AABStageGimmick::SetChooseNext()
 
 void AABStageGimmick::OnOpponentDestroyed(AActor* DestroyedActor)
 {
+	IABGameInterface* ABGameMode = Cast<IABGameInterface>(GetWorld()->GetAuthGameMode());
+	if (ABGameMode)
+	{
+		ABGameMode->OnPlayerScoreChanged(CurrentStageNum);
+		if (ABGameMode->IsGameCleared())
+		{
+			return;
+		}
+	}
+	
 	SetState(EStageState::REWARD);
 }
 
