@@ -5,13 +5,14 @@
 #include "CoreMinimal.h"
 #include "Character/ABCharacterBase.h"
 #include "InputActionValue.h"
+#include "Interface/ABCharacterHUDInterface.h"
 #include "ABCharacterPlayer.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class ARENABATTLE_API AABCharacterPlayer : public AABCharacterBase
+class ARENABATTLE_API AABCharacterPlayer : public AABCharacterBase, public IABCharacterHUDInterface
 {
 	GENERATED_BODY()
 public:
@@ -65,4 +66,8 @@ protected:
 	ECharacterControlType CurrentCharacterControlType;
 
 	void Attack();
+
+	// UI Section
+protected:
+	virtual void SetupHUDWidget(class UABHUDWidget* InHUDWidget) override;
 };
