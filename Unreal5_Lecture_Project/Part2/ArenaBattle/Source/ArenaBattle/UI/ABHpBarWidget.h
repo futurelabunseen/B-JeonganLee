@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "ABUserWidget.h"
+#include "GameData/ABCharacterStat.h"
 #include "ABHpBarWidget.generated.h"
 
 /**
@@ -23,13 +24,20 @@ protected:
 	virtual void NativeConstruct() override;
 	
 public:
-	FORCEINLINE void SetMaxHp(float NewMaxHp) { MaxHp = NewMaxHp; }
+	void UpdateStat(const FABCharacterStat& BaseStat, const FABCharacterStat& ModifierStat);
 	void UpdateHpBar(float NewCurrentHp);
+	FString GetHpStatText();
 	
 protected:
 	// 언리얼 오브젝트 포인터로 UProgressBar를 가리키는 포인터 변수 선언 (전방선언 의존성 x)
 	UPROPERTY()
 	TObjectPtr<class UProgressBar> HpProgressBar;
+
+	UPROPERTY()
+	TObjectPtr<class UTextBlock> HpStat;
+
+	UPROPERTY()
+	float CurrentHp;
 
 	UPROPERTY()
 	float MaxHp;
