@@ -64,6 +64,9 @@ protected:
 	void ComboActionBegin();
 	void ComboActionEnd(class UAnimMontage* TargetMontage, bool IsProperlyEnded);
 
+	//	콤보가 끝났을 때 호출되는 메서드
+	virtual void NotifyComboActionEnd();
+	
 	// 타이머 발동 메소드와 입력이 들어왔는지 체크하는 함수
 	void SetComboCheckTimer();
 	void ComboCheck();

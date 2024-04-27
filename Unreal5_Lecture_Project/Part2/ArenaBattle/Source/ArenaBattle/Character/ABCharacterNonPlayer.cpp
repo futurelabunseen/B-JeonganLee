@@ -4,6 +4,7 @@
 #include "ABCharacterNonPlayer.h"
 
 #include "AI/ABAIController.h"
+#include "CharacterStat/ABCharacterStatComponent.h"
 #include "Engine/AssetManager.h"
 #include "Engine/StreamableManager.h"
 
@@ -50,4 +51,40 @@ void AABCharacterNonPlayer::NPCMeshLoadCompleted()
 	}
 
 	NPCMeshHandle->ReleaseHandle();
+}
+
+float AABCharacterNonPlayer::GetAIPatrolRadius()
+{
+	return 800.0f;
+}
+
+float AABCharacterNonPlayer::GetAIDetectRange()
+{
+	return 400.0f;
+}
+
+float AABCharacterNonPlayer::GetAIAttackRange()
+{
+	return Stat->GetTotalStat().AttackRange + Stat->GetAttackRadius() * 2;
+}
+
+float AABCharacterNonPlayer::GetAITurnSpeed()
+{
+	return 2.0f;
+}
+
+void AABCharacterNonPlayer::SetAIAttackDelegate(const FAICharacterAttackFinished& InOnAttackFinished)
+{
+	OnAttackFinished = InOnAttackFinished;
+}
+
+void AABCharacterNonPlayer::AttackByAI()
+{
+	ProcessComboCommand();
+}
+
+void AABCharacterNonPlayer::NotifyComboActionEnd()
+{
+	Super::NotifyComboActionEnd();
+	OnAttackFinished.ExecuteIfBound();
 }
