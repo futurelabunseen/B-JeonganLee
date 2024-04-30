@@ -1,8 +1,0 @@
-{
-	"SourceFiles": [
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\ObjectReflection\\Source\\ObjectReflection\\ObjectReflection.Build.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\ObjectReflection\\Source\\ObjectReflection.Target.cs",
-		"D:\\B-JeonganLee\\Unreal5_Lecture_Project\\Part1\\ObjectReflection\\Source\\ObjectReflectionEditor.Target.cs"
-	],
-	"EngineVersion": "5.3.2"
-}
