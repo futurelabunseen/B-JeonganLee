@@ -11,6 +11,16 @@
 			"AdditionalDependencies": [
 				"Engine"
 			]
+		},
+		{
+			"Name": "GasExample",
+			"Type": "Runtime",
+			"LoadingPhase": "PostDefault",
+			"AdditionalDependencies": [
+				"Engine",
+				"UghProject",
+				"GameplayAbilities"
+			]
 		}
 	],
 	"Plugins": [
@@ -20,6 +30,10 @@
 			"TargetAllowList": [
 				"Editor"
 			]
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
 		}
 	]
 }
