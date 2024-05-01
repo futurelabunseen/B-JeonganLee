@@ -10,6 +10,6 @@ public class UghProjectEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_3;
-		ExtraModuleNames.Add("UghProject");
+		ExtraModuleNames.AddRange( new string[] { "UghProject" , "GasExample" });
 	}
 }
