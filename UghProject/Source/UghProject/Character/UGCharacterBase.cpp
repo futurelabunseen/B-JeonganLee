@@ -39,24 +39,6 @@ AUGCharacterBase::AUGCharacterBase()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
-
-	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionJumpRef(TEXT("/Script/EnhancedInput.InputAction'/Game/Ugh/Input/Actions/IA_Jump.IA_Jump'"));
-	if (nullptr != InputActionJumpRef.Object)
-	{
-		JumpAction = InputActionJumpRef.Object;
-	}
-
-	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionMoveRef(TEXT("/Script/EnhancedInput.InputAction'/Game/Ugh/Input/Actions/IA_Move.IA_Move'"));
-	if (nullptr != InputActionMoveRef.Object)
-	{
-		MoveAction = InputActionMoveRef.Object;
-	}
-
-	static ConstructorHelpers::FObjectFinder<UInputAction> InputActionLookRef(TEXT("/Script/EnhancedInput.InputAction'/Game/Ugh/Input/Actions/IA_Look.IA_Look'"));
-	if (nullptr != InputActionLookRef.Object)
-	{
-		LookAction = InputActionLookRef.Object;
-	}
 }
 
 void AUGCharacterBase::BeginPlay()
@@ -67,7 +49,10 @@ void AUGCharacterBase::BeginPlay()
 	{
 		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
 		{
-			Subsystem->AddMappingContext(MappingContext, 0);
+			if (MappingContext)
+			{
+				Subsystem->AddMappingContext(MappingContext, 0);
+			}
 		}
 	}
 }
@@ -87,7 +72,6 @@ void AUGCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	{
 		UE_LOG(LogTemplateCharacter, Error, TEXT("PlayerInputComponent is not an EnhancedInputComponent"));
 	}
-	
 }
 
 void AUGCharacterBase::Move(const FInputActionValue& Value)
