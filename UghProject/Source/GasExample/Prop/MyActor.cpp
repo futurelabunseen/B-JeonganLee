@@ -53,7 +53,7 @@ void AMyActor::BeginPlay()
 
 void AMyActor::TimerAction()
 {
-	ABGAS_LOG(LogABGAS, Log, TEXT("TimerAction"));
+	GAS_LOG(LogABGAS, Log, TEXT("TimerAction"));
 
 	FGameplayTagContainer TargetTag(ACTOR_ROTATE);
 
