@@ -29,7 +29,7 @@ void UUGGA_Attack::ActivateAbility(const FGameplayAbilitySpecHandle Handle, cons
 
 void UUGGA_Attack::InputPressed(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo)
 {
-	GAS_LOG(LogABGAS, Log, TEXT("Begin"));
+	//GAS_LOG(LogABGAS, Log, TEXT("Begin"));
 }
 
 void UUGGA_Attack::CancelAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateCancelAbility)
