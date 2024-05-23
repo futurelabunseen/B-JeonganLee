@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Engine/GameInstance.h"
-#include "UGGameInstance.generated.h"
+#include "Abilities/GameplayAbility.h"
+#include "UGGameplayAbility.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class UGHPROJECT_API UUGGameInstance : public UGameInstance
+class UGHPROJECT_API UUGGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
 	
