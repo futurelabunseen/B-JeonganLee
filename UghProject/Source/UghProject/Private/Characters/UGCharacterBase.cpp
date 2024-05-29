@@ -3,6 +3,7 @@
 #include "Characters/UGCharacterBase.h"
 
 #include "Characters/Abilities/UGAbilitySystemComponent.h"
+#include "Characters/Abilities/UGGameplayAbility.h"
 #include "Components/CapsuleComponent.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
@@ -18,17 +19,21 @@ UAbilitySystemComponent* AUGCharacterBase::GetAbilitySystemComponent() const
 	return AbilitySystemComponent.Get();
 }
 
-int32 AUGCharacterBase::GetAbilityLevel(EUGAbilityID AbilityID) const
+int32 AUGCharacterBase::GetAbilityLevel(EUGAbilityInputID AbilityID) const
 {
 	return 1;
 }
 
+
 void AUGCharacterBase::AddCharacterAbilities()
 {
-	for (const auto& StartAbility : CharacterAbilities)
+	for (TSubclassOf<UUGGameplayAbility>& StartAbility : CharacterAbilities)
 	{
-		//AbilitySystemComponent->GiveAbility(FGameplayAbilitySpec(StartAbility.GetDefaultObject()->AbilityID, GetDefaultObject(StartAbility.GetDefaultObject()->)));
+		AbilitySystemComponent->GiveAbility(
+			FGameplayAbilitySpec(StartAbility, GetAbilityLevel(StartAbility.GetDefaultObject()->AbilityID), static_cast<int32>(StartAbility.GetDefaultObject()->AbilityInputID), this));
 	}
+
+	AbilitySystemComponent->bCharacterAbilitiesGiven = true;
 }
 
 

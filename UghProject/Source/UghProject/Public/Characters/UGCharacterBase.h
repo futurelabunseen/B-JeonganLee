@@ -22,16 +22,14 @@ public:
 	virtual class UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 
 	UFUNCTION(BlueprintCallable, Category = "Ugh|Abilities")
-	virtual int32 GetAbilityLevel(EUGAbilityID AbilityID) const;
-	// camera
-
+	virtual int32 GetAbilityLevel(EUGAbilityInputID AbilityID) const;
 	
 protected:
 	TWeakObjectPtr<class UUGAbilitySystemComponent> AbilitySystemComponent;
 	TWeakObjectPtr<class UUGAttributeSetBase> AttributeSetBase;
 
 	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "Ugh|Abilities")
-	TArray<TSubclassOf<class UGameplayAbility>> CharacterAbilities;
+	TArray<TSubclassOf<class UUGGameplayAbility>> CharacterAbilities;
 
 	virtual void AddCharacterAbilities();
 	

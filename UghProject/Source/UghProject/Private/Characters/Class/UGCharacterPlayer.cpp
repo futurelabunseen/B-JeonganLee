@@ -54,18 +54,20 @@ void AUGCharacterPlayer::PossessedBy(AController* NewController)
 
 		AttributeSetBase = PS->GetAttributeSetBase();
 
-		for (const auto& StartAbility : StartAbilities)
-		{
-			FGameplayAbilitySpec StartSpec(StartAbility);
-			AbilitySystemComponent->GiveAbility(StartSpec);
-		}
+		// for (const auto& StartAbility : StartAbilities)
+		// {
+		// 	FGameplayAbilitySpec StartSpec(StartAbility);
+		// 	AbilitySystemComponent->GiveAbility(StartSpec);
+		// }
+		//
+		// for (const auto& StartInputAbility : StartInputAbilities)
+		// {
+		// 	FGameplayAbilitySpec StartSpec(StartInputAbility.Value);
+		// 	StartSpec.InputID = StartInputAbility.Key;
+		// 	AbilitySystemComponent->GiveAbility(StartSpec);
+		// }
 
-		for (const auto& StartInputAbility : StartInputAbilities)
-		{
-			FGameplayAbilitySpec StartSpec(StartInputAbility.Value);
-			StartSpec.InputID = StartInputAbility.Key;
-			AbilitySystemComponent->GiveAbility(StartSpec);
-		}
+		AddCharacterAbilities();
 
 		SetupGASInputComponent();
 
@@ -107,9 +109,9 @@ void AUGCharacterPlayer::SetupGASInputComponent()
 	if (IsValid(AbilitySystemComponent.Get()) && IsValid(InputComponent))
 	{
 		UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::GASInputPressed , 0);
-		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AUGCharacterPlayer::GASInputReleased , 0);
-		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::GASInputPressed, 1);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::GASInputPressed , static_cast<int32>(EUGAbilityInputID::Jump));
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AUGCharacterPlayer::GASInputReleased , static_cast<int32>(EUGAbilityInputID::Jump));
+		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::GASInputPressed, static_cast<int32>(EUGAbilityInputID::Ability1));
 	}
 }
 
