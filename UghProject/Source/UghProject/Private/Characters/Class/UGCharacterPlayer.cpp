@@ -109,6 +109,7 @@ void AUGCharacterPlayer::SetupGASInputComponent()
 	if (IsValid(AbilitySystemComponent.Get()) && IsValid(InputComponent))
 	{
 		UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::GASInputPressed , static_cast<int32>(EUGAbilityInputID::Jump));
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AUGCharacterPlayer::GASInputReleased , static_cast<int32>(EUGAbilityInputID::Jump));
 		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Triggered, this, &AUGCharacterPlayer::GASInputPressed, static_cast<int32>(EUGAbilityInputID::Ability1));
@@ -144,8 +145,6 @@ void AUGCharacterPlayer::GASInputReleased(int32 InputId)
 			AbilitySystemComponent->AbilitySpecInputReleased(*Spec);
 		}
 	}
-
-	
 }
 
 void AUGCharacterPlayer::Move(const FInputActionValue& Value)
@@ -176,4 +175,6 @@ void AUGCharacterPlayer::Look(const FInputActionValue& Value)
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
 }
+
+
 
