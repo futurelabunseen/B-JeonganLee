@@ -25,12 +25,15 @@ AUGCharacterPlayer::AUGCharacterPlayer()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.0f, 540.0f, 0.0f);
 
-	GetCharacterMovement()->JumpZVelocity = 700.0f;
+	GetCharacterMovement()->JumpZVelocity = 500.0f;
 	GetCharacterMovement()->AirControl = 0.2f;
 	GetCharacterMovement()->MaxWalkSpeed = 600.0f;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.0f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2048.0f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1024.0f;
+
+	GetCharacterMovement()->bUseControllerDesiredRotation = true;
+	GetCharacterMovement()->bOrientRotationToMovement = false;
 
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(RootComponent);
@@ -40,6 +43,8 @@ AUGCharacterPlayer::AUGCharacterPlayer()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
+
+	GunComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("GunComponent"));
 }
 
 void AUGCharacterPlayer::PossessedBy(AController* NewController)
@@ -53,19 +58,6 @@ void AUGCharacterPlayer::PossessedBy(AController* NewController)
 		AbilitySystemComponent->InitAbilityActorInfo(PS, this);
 
 		AttributeSetBase = PS->GetAttributeSetBase();
-
-		// for (const auto& StartAbility : StartAbilities)
-		// {
-		// 	FGameplayAbilitySpec StartSpec(StartAbility);
-		// 	AbilitySystemComponent->GiveAbility(StartSpec);
-		// }
-		//
-		// for (const auto& StartInputAbility : StartInputAbilities)
-		// {
-		// 	FGameplayAbilitySpec StartSpec(StartInputAbility.Value);
-		// 	StartSpec.InputID = StartInputAbility.Key;
-		// 	AbilitySystemComponent->GiveAbility(StartSpec);
-		// }
 
 		AddCharacterAbilities();
 
@@ -101,6 +93,16 @@ void AUGCharacterPlayer::BeginPlay()
 				Subsystem->AddMappingContext(MappingContext, 0);
 			}
 		}
+	}
+}
+
+void AUGCharacterPlayer::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	if (GunComponent && GetMesh())
+	{
+		GunComponent->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName("GunSocket"));
 	}
 }
 

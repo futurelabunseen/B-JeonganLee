@@ -4,6 +4,9 @@
 
 ASC를 중심으로 어빌리티를 실행함으로 이펙트를 발생시켜 애트리뷰트를 조작하는 방식이다. 어빌리티는 어빌리티 Task를 통해 구성할 수 있으며, C++을 통해 로직을 구현하고 블루프린트를 통해 연결한다.
 
+- [Document 번역본](https://kkadalg.tistory.com/29)
+- [GAS간단 이해 영상](https://www.youtube.com/watch?v=wpAvEOZAlEs&list=PLuS6-Pdt2hhYGZkME7K7ZDT2qf4vbY5c3)
+
 ## GamePlayAbilitySystem
 
 ## GameplayAbility

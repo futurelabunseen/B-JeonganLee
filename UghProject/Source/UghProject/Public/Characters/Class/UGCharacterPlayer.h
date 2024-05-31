@@ -21,17 +21,22 @@ public:
 	
 	virtual void PossessedBy(AController* NewController) override; // 빙의가 될 때 호출
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	virtual void BeginPlay() override;
-
+	
 	FORCEINLINE class UAnimMontage* GetAttackMontage() const { return AttackMontage; }
 
 protected:
+	virtual void BeginPlay() override;
+	virtual void PostInitializeComponents() override;
+	
 	void SetupGASInputComponent();
 	void GASInputPressed(int32 InputId);
 	void GASInputReleased(int32 InputId);
-	void Test(int32 InputId);
 	
 protected:
+
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
+	TObjectPtr<USkeletalMeshComponent> GunComponent;
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class USpringArmComponent> CameraBoom;
 
