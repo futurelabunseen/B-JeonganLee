@@ -43,8 +43,6 @@ AUGCharacterPlayer::AUGCharacterPlayer()
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
 	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
 	FollowCamera->bUsePawnControlRotation = false;
-
-	GunComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("GunComponent"));
 }
 
 void AUGCharacterPlayer::PossessedBy(AController* NewController)
@@ -100,10 +98,10 @@ void AUGCharacterPlayer::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 
-	if (GunComponent && GetMesh())
-	{
-		GunComponent->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName("GunSocket"));
-	}
+	// if (GunComponent && GetMesh())
+	// {
+	// 	GunComponent->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, FName("GunSocket"));
+	// }
 }
 
 void AUGCharacterPlayer::SetupGASInputComponent()

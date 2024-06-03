@@ -27,5 +27,13 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Health")
 	FGameplayAttributeData Health;
 	ATTRIBUTE_ACCESSORS(UUGAttributeSetBase, Health);
+
+	UPROPERTY(BlueprintReadOnly, Category = "Damage")
+	FGameplayAttributeData Damage;
+	ATTRIBUTE_ACCESSORS(UUGAttributeSetBase, Damage)
+
+	UPROPERTY(BlueprintReadOnly, Category = "Armor")
+	FGameplayAttributeData Armor;
+	ATTRIBUTE_ACCESSORS(UUGAttributeSetBase, Armor)
 	
 };

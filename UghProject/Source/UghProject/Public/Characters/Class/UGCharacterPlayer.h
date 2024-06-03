@@ -33,10 +33,6 @@ protected:
 	void GASInputReleased(int32 InputId);
 	
 protected:
-
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere)
-	TObjectPtr<USkeletalMeshComponent> GunComponent;
-	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class USpringArmComponent> CameraBoom;
 

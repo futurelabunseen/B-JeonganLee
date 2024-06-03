@@ -19,6 +19,7 @@ AUGProjectile::AUGProjectile()
 	ProjectileMovement->MaxSpeed = 3000.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = false;
+	ProjectileMovement->ProjectileGravityScale = 0.f;
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(Collision);
@@ -28,6 +29,10 @@ AUGProjectile::AUGProjectile()
 void AUGProjectile::BeginPlay()
 {
 	Super::BeginPlay();
+
+	float InLifeTime = Range / ProjectileMovement->InitialSpeed;
+
+	SetLifeSpan(InLifeTime);
 }
 
 
