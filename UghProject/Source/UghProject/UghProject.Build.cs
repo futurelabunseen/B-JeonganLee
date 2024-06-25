@@ -12,11 +12,20 @@ public class UghProject : ModuleRules
 	
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "EnhancedInput" });
 
+<<<<<<< HEAD
 		PrivateDependencyModuleNames.AddRange(new string[] { 
 			"GameFeatures",
 			"GameplayAbilities",
 			"GameplayTasks",
 			"GameplayTags" 
+=======
+		PrivateDependencyModuleNames.AddRange(new string[] {
+			"GasExample",
+			"GameFeatures",
+			"GameplayAbilities",
+			"GameplayTasks",
+			"GameplayTags"
+>>>>>>> main
 		});
 
 		// Uncomment if you are using Slate UI
