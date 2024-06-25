@@ -23,6 +23,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	
 	FORCEINLINE class UAnimMontage* GetAttackMontage() const { return AttackMontage; }
+	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
+	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
 protected:
 	virtual void BeginPlay() override;

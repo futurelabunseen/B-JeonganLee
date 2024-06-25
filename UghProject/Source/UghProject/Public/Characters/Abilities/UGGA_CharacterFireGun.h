@@ -21,6 +21,9 @@ public:
 protected:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	float Range;
+
+	UPROPERTY(BlueprintReadOnly, EditAnywhere)
+	float Damage;
 	
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	TSubclassOf<AUGProjectile> ProjectileClass;
